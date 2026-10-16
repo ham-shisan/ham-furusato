@@ -1,0 +1,742 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="年収と家族構成を入れるだけでふるさと納税の限度額がわかるシミュレーターと、はむたが厳選したおすすめ返礼品50品以上。目的別・予算別のおすすめの組み合わせも。"><link rel="canonical" href="https://ham-shisan.github.io/ham-furusato/"><meta property="og:type" content="website"><meta property="og:site_name" content="はむたの資産形成塾"><meta property="og:title" content="ふるさと納税 限度額シミュレーター＆はむたの超おすすめ返礼品"><meta property="og:description" content="年収と家族構成を入れるだけでふるさと納税の限度額がわかるシミュレーターと、はむたが厳選したおすすめ返礼品50品以上。目的別・予算別のおすすめの組み合わせも。"><meta property="og:url" content="https://ham-shisan.github.io/ham-furusato/"><meta property="og:image" content="https://ham-shisan.github.io/ham-furusato/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://ham-shisan.github.io/ham-furusato/ogp.png"><link rel="icon" href="img/icon.png"><link rel="apple-touch-icon" href="img/icon.png"><style>html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style><title>はむたのふるさと納税ページ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8f2; --paper:#ffffff; --ink:#1f2a37; --sub:#5b6676; --line:#e3e8dc;
+  --green:#2ea05a; --green-soft:#e4f4e9; --orange:#f07c22; --orange-soft:#fff0e2;
+  --red:#e84050; --blue:#2f7be0; --chip:#eef2ea; --shadow:0 1px 2px rgba(31,42,55,.06),0 6px 18px rgba(31,42,55,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a16; --paper:#1d2520; --ink:#eef2ec; --sub:#a9b4ab; --line:#2d3a31;
+  --green:#5cc985; --green-soft:#1f3527; --orange:#ff9a4a; --orange-soft:#3a2a1c;
+  --red:#ff6b78; --blue:#6ea8ff; --chip:#26302a; --shadow:none; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141a16; --paper:#1d2520; --ink:#eef2ec; --sub:#a9b4ab; --line:#2d3a31;
+  --green:#5cc985; --green-soft:#1f3527; --orange:#ff9a4a; --orange-soft:#3a2a1c;
+  --red:#ff6b78; --blue:#6ea8ff; --chip:#26302a; --shadow:none; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;font-size:16px;line-height:1.75}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 56px}
+.pr{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--sub);border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 12px}
+.pr b{background:var(--red);color:#fff;border-radius:6px;padding:0 8px;font-size:12px;letter-spacing:.05em}
+header{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:20px}
+header img{width:132px;height:auto}
+@media (max-width:520px){header img{width:88px;align-self:start}h1{font-size:24px}}
+.kicker{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;color:var(--green);font-size:14px;letter-spacing:.06em}
+h1{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(26px,6vw,36px);line-height:1.3;margin:4px 0 8px;text-wrap:balance}
+.lead{color:var(--sub);margin:0}
+h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:22px;margin:40px 0 12px;display:flex;align-items:center;gap:10px;text-wrap:balance}
+h2 .no{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-size:15px;flex:none}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:300px}
+th,td{padding:8px 6px;white-space:nowrap;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+th{font-size:13px;color:var(--sub);font-weight:500}
+td.num{text-align:right;font-weight:700}
+tr.hl td{background:var(--orange-soft)}
+.note{font-size:12.5px;color:var(--sub);margin:10px 0 0}
+.tips{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.tip{background:var(--green-soft);border-radius:14px;padding:12px 14px}
+.tip strong{display:block;font-family:"M PLUS Rounded 1c",sans-serif;font-size:16px}
+.tip span{font-size:14px;color:var(--sub)}
+.cat{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.cat a{background:var(--chip);color:var(--ink);text-decoration:none;border-radius:999px;padding:4px 12px;font-size:14px}
+.items{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow);min-width:0}
+.ph{display:block;margin:-14px -14px 4px;border-radius:16px 16px 0 0;overflow:hidden;aspect-ratio:1/1;background:var(--chip)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.rank{align-self:flex-start;font-size:12px;font-weight:700;color:var(--orange);background:var(--orange-soft);border-radius:6px;padding:0 8px}
+.item h3{margin:0;font-size:17px;line-height:1.4;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800}
+.town{font-size:13px;color:var(--sub)}
+.price{font-weight:700;font-variant-numeric:tabular-nums}
+.price small{font-weight:400;color:var(--sub)}
+.why{font-size:14px;margin:2px 0 6px}
+.btn{margin-top:auto;display:block;text-align:center;background:var(--red);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:10px 12px;font-size:15px}
+.bs{display:none}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.combo{display:block}
+footer{margin-top:44px;font-size:12.5px;color:var(--sub)}
+footer ul{padding-left:18px;margin:6px 0}
+.simform{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.f{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--sub);min-width:0}
+.f input,.f select{font:inherit;font-size:17px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;width:100%;min-width:0}
+.yen{display:flex;align-items:center;gap:6px}.yen em{font-style:normal;color:var(--sub);white-space:nowrap}
+.result{margin-top:14px;background:var(--orange-soft);border-radius:14px;padding:14px 16px;text-align:center}
+.rl{font-size:14px;color:var(--sub)}
+.rv{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(34px,9vw,46px);color:var(--orange);font-variant-numeric:tabular-nums;line-height:1.3}
+.rs{font-size:14px}
+.table-d{margin-top:12px}.table-d summary{cursor:pointer;color:var(--green);font-weight:700;font-size:14px}
+@media (max-width:620px){
+  .items{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .item{padding:10px;gap:4px;border-radius:14px}
+  .ph{margin:-10px -10px 2px;border-radius:14px 14px 0 0}
+  .item h3{font-size:14.5px;line-height:1.35}
+  .rank{font-size:11px;padding:0 6px}
+  .town{font-size:12px}
+  .price{font-size:14px}.price small{font-size:11px}
+  .why{font-size:12px;line-height:1.5;margin:0 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .btn{font-size:13.5px;padding:8px 6px;border-radius:10px}
+  .bl{display:none}.bs{display:inline}
+}
+[hidden]{display:none!important}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.search{flex:1 1 240px;display:flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0 10px;min-width:0}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;padding:10px 0;outline:none}
+.chipbtn{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.chipbtn[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.item{position:relative}
+.fav{position:absolute;top:8px;right:8px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#b0b7c0;font-size:22px;line-height:38px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.fav[aria-pressed="true"]{color:#f5a623}
+.cart{position:sticky;bottom:calc(10px + env(safe-area-inset-bottom,0px));margin:16px auto 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;width:max-content;max-width:100%;background:var(--ink);color:var(--bg);text-decoration:none;border-radius:999px;padding:8px 16px;font-size:13.5px;box-shadow:0 6px 20px rgba(0,0,0,.2);z-index:5}
+.cart .go{color:#ffd28a;font-weight:700;margin-left:4px}
+.cart .cl{font-size:12px;opacity:.85;margin-top:2px}
+.cart .ov{color:#ffb3a7;font-weight:700}
+@media (max-width:620px){.fav{width:32px;height:32px;font-size:18px;line-height:32px;top:6px;right:6px}}
+.combo .row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;border-bottom:1px dashed var(--line);padding:8px 0}
+.combo .row .nm{min-width:0;font-size:14.5px;line-height:1.45}.combo .row .nm small{display:block;color:var(--sub);font-size:12px}
+.combo .row .pr2{font-variant-numeric:tabular-nums;white-space:nowrap;font-size:14px}
+.combo .buy{background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:13px;border-radius:10px;padding:7px 12px;white-space:nowrap}
+.combo .rm{border:0;background:none;color:var(--sub);font-size:12px;cursor:pointer;padding:0;margin-top:2px;text-decoration:underline}
+.combo .empty{color:var(--sub);font-size:14px;margin:4px 0 8px}
+.combo .sum,.combo .lim{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;font-variant-numeric:tabular-nums}
+.combo .sum span:last-child,.combo .lim span:last-child{white-space:nowrap}
+.combo .sum{font-weight:800;color:var(--green);border:0;font-size:17px}
+.combo .lim{font-weight:700;color:var(--ink);border-top:1px solid var(--line)}
+.cmsg{font-size:13px;font-weight:700;margin:2px 0 0}.cmsg.ok{color:var(--green)}.cmsg.ng{color:var(--red)}
+.seg{display:inline-flex;background:var(--chip);border-radius:999px;padding:4px;margin:0 0 12px}
+.seg button{font:inherit;font-size:15px;font-weight:700;border:0;background:transparent;color:var(--sub);border-radius:999px;padding:7px 18px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.qt th,.qt td{text-align:right;font-size:13.5px;padding:7px 6px}
+.qt th:first-child,.qt td:first-child{text-align:left;position:sticky;left:0;background:var(--paper)}
+.qt th{line-height:1.35;vertical-align:bottom}
+.qt td.num{font-weight:700}
+.swipe{display:none;margin:6px 0 0}
+@media (max-width:620px){.swipe{display:block}}
+
+/* ---- v16：見た目と導線 ---- */
+html{scroll-behavior:smooth}
+h2,.cath,#picks{scroll-margin-top:76px}
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(31,42,55,.06)}
+.topnav ol{list-style:none;margin:0 auto;padding:6px 16px;max-width:900px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.topnav a{display:flex;align-items:center;justify-content:center;gap:6px;height:100%;white-space:nowrap;text-decoration:none;color:var(--ink);border-radius:12px;padding:8px 6px;font-size:14px;font-weight:700;line-height:1.3;text-align:center;transition:background .15s,color .15s}
+.topnav a:hover{background:var(--chip)}
+.topnav a i{font-style:normal;font-size:18px;line-height:1;flex:none}
+.topnav a.cur{background:var(--green-soft);color:var(--green)}
+@media (max-width:700px){
+  .topnav ol{padding:4px 6px;gap:3px}
+  .topnav a{flex-direction:column;gap:3px;padding:6px 2px 5px;font-size:11px;border-radius:10px;white-space:normal;word-break:keep-all}
+  .topnav a i{font-size:20px}
+}
+.picks-h{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:18px;margin:26px 0 10px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.picks-h small{font-size:13px;color:var(--sub);font-weight:500}
+.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pick{background:var(--paper);border:2px solid var(--orange);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);min-width:0}
+.pph{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--chip)}
+.pph img{width:100%;height:100%;object-fit:cover;display:block}
+.pn{position:absolute;left:8px;top:8px;width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:16px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.pb{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pbadge{align-self:flex-start;font-size:12px;font-weight:700;color:#fff;background:var(--green);border-radius:6px;padding:0 8px}
+.pb h3{margin:0;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:16px;line-height:1.4}
+.pb p{margin:0;font-size:13px;color:var(--sub);line-height:1.55}
+.pf{margin-top:auto;padding-top:6px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pf .btn{margin:0;padding:8px 12px;font-size:14px;flex:1 1 auto}
+@media (max-width:620px){
+  .picks{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:2px 16px 8px;scrollbar-width:none}
+  .picks::-webkit-scrollbar{display:none}
+  .pick{scroll-snap-align:start}
+}
+.ph-e{display:grid!important;place-items:center;font-size:clamp(44px,12vw,64px);text-decoration:none}
+.ph-e.c-sea{background:#e3f1fb}.ph-e.c-meat{background:#fbe7e3}.ph-e.c-daily{background:#eef0f4}.ph-e.c-rice{background:#f6f1df}.ph-e.c-fruit{background:#ebf6df}
+:root[data-theme="dark"] .ph-e{filter:saturate(.9) brightness(.55)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ph-e{filter:saturate(.9) brightness(.55)}}
+.cath{font-family:"M PLUS Rounded 1c",sans-serif;font-size:18px;margin:22px 0 10px}
+.ract{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.ract a,.ract button{font:inherit;font-size:14.5px;font-weight:700;border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none;border:2px solid var(--orange)}
+.ract .p1{background:var(--orange);color:#fff}
+.ract .p2{background:var(--paper);color:var(--orange)}
+.sortsel{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px}
+.toast{margin:8px 0 0;font-size:13px;color:var(--green);font-weight:700;text-align:center}
+.toast button{font:inherit;font-size:13px;border:0;background:none;color:var(--sub);text-decoration:underline;cursor:pointer}
+
+/* ---- v17：セット・FAQ・共有・チャンネル ---- */
+.sets .sgrp{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+.sgl{font-size:13px;color:var(--sub);font-weight:700;min-width:6.5em}
+.stabs{display:flex;gap:6px;flex-wrap:wrap}
+.stab{font:inherit;font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.stab[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.spanel{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+.shead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.shead h3{margin:0;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:19px}
+.sfor{font-size:13px;color:var(--sub)}
+.slist{list-style:none;margin:8px 0 0;padding:0}
+.slist li{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line)}
+.sth{width:52px;height:52px;border-radius:10px;overflow:hidden;display:block;background:var(--chip)}
+.sth img{width:100%;height:100%;object-fit:cover;display:block}
+.sth .ph-e{width:100%;height:100%;font-size:26px}
+.snm{font-size:14.5px;line-height:1.4;min-width:0}.snm small span{white-space:nowrap}.snm small{display:block;color:var(--sub);font-size:12px;font-variant-numeric:tabular-nums}
+.sets .buy{background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:13px;border-radius:10px;padding:7px 12px;white-space:nowrap}
+.ssum{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0 2px;font-variant-numeric:tabular-nums}
+.ssum b{font-size:20px;color:var(--green);font-family:"M PLUS Rounded 1c",sans-serif}
+.snote{font-size:13px;color:var(--sub);margin:2px 0 10px}
+.suse{font:inherit;font-size:15px;font-weight:700;width:100%;border:2px solid var(--green);background:var(--green-soft);color:var(--green);border-radius:12px;padding:10px;cursor:pointer}
+.qty{display:inline-flex;align-items:center;gap:2px;margin-top:3px}
+.qty button{font:inherit;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;line-height:1;padding:0}
+.qty span{min-width:3.2em;text-align:center;font-size:12.5px;font-variant-numeric:tabular-nums}
+.share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--sub);align-items:center}
+.share a,.share button{font:inherit;font-size:13px;font-weight:700;text-decoration:none;border-radius:999px;padding:6px 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.share .sx{background:#111;color:#fff;border-color:#111}
+.share .sl{background:#06c755;color:#fff;border-color:#06c755}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:0 14px;margin:0 0 8px}
+.faq summary{cursor:pointer;font-weight:700;padding:12px 0;list-style:none;display:flex;gap:8px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-family:"M PLUS Rounded 1c",sans-serif}
+.faq details[open] summary{border-bottom:1px dashed var(--line)}
+.faq p{margin:10px 0 12px;font-size:14.5px}
+.ch{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:var(--green-soft);border-radius:18px;padding:16px}
+.ch img{width:92px;height:auto}
+.ch h2{margin:0 0 4px;font-size:19px}
+.ch p{margin:0 0 10px;font-size:14px;color:var(--sub)}
+.ch a{display:inline-block;background:#e62117;color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:9px 18px;font-size:15px}
+.rev{margin:0 0 6px;font-size:13px;background:var(--orange-soft);border-radius:10px;padding:6px 8px;line-height:1.5}
+.rev b{display:block;font-size:11.5px;color:var(--orange)}
+@media (max-width:620px){.slist li{grid-template-columns:44px minmax(0,1fr) auto;gap:8px}.sth{width:44px;height:44px}.sgl{min-width:0;width:100%}.ch{grid-template-columns:64px 1fr}.ch img{width:64px}}
+
+/* ---- v20：イチオシ5選スライダー ---- */
+.picks-top{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.picks-top .picks-h{margin-bottom:10px}
+.parr{display:flex;gap:6px;margin-bottom:12px;flex:none}
+.parr button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.parr button:disabled{opacity:.35;cursor:default}
+.picks{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px) / 3.25);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 2px 8px;scrollbar-width:none}
+.picks::-webkit-scrollbar{display:none}
+.pick{scroll-snap-align:start}
+.pick .pf{flex-direction:column;align-items:stretch;gap:6px}.pick .pf .btn{flex:none;width:100%}
+.pdots{display:flex;justify-content:center;gap:6px;margin-top:4px}
+.pdots span{width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .2s,width .2s}
+.pdots span.on{background:var(--orange);width:18px;border-radius:4px}
+@media (max-width:620px){
+  .picks{grid-auto-columns:72%;margin-inline:-16px;padding:2px 16px 8px;scroll-padding-inline:16px}
+  .parr{display:none}
+}
+
+/* ---- v24：見出しアイコン・スマホ3列 ---- */
+h2 .ico{font-size:24px;line-height:1;flex:none}
+.lead2{margin:-4px 0 12px;color:var(--sub);font-size:14px}
+.vtog{display:none;background:var(--chip);border-radius:999px;padding:3px}
+.vtog button{font:inherit;font-size:13px;font-weight:700;border:0;background:transparent;color:var(--sub);border-radius:999px;padding:5px 10px;cursor:pointer}
+.vtog button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+@media (max-width:620px){
+  .vtog{display:inline-flex}
+  html:not(.detail) .items{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  html:not(.detail) .item{padding:6px;gap:2px;border-radius:10px;box-shadow:none}
+  html:not(.detail) .ph{margin:-6px -6px 3px;border-radius:10px 10px 0 0}
+  html:not(.detail) .item h3{font-size:12px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  html:not(.detail) .town{font-size:10px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  html:not(.detail) .price{font-size:12.5px}
+  html:not(.detail) .price small{display:none}
+  html:not(.detail) .why,html:not(.detail) .rank,html:not(.detail) .rev{display:none}
+  html:not(.detail) .btn{font-size:11px;padding:6px 2px;border-radius:8px;margin-top:3px}
+  html:not(.detail) .fav{width:26px;height:26px;font-size:15px;line-height:26px;top:4px;right:4px}
+  html:not(.detail) .cath{margin:16px 0 8px}
+}
+
+/* ---- v25：注意書き・モデルケース ---- */
+.note.warn{color:var(--red);font-weight:700}
+.caseh{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:18px;margin:26px 0 10px}
+.caseh small{font-size:12.5px;color:var(--sub);font-weight:500}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.case{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);min-width:0}
+.ch2{font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px;line-height:1.35}
+.ctag{flex:none;background:var(--orange);color:#fff;border-radius:999px;padding:1px 10px;font-size:12px}
+.cemo{font-size:44px;text-align:center;line-height:1.2}
+.case dl{margin:0;display:flex;flex-direction:column}
+.case dl div{display:flex;justify-content:space-between;gap:10px;padding:6px 2px;border-bottom:1px solid var(--line);font-size:13px}
+.case dt{color:var(--sub);flex:none}
+.case dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;min-width:0}
+.case .clim{border:2px solid var(--orange);border-radius:8px;padding:6px 8px;margin:4px 0}
+.case .clim dt,.case .clim dd{color:var(--orange);font-weight:800}
+.case .clim dd{font-size:18px;font-family:"M PLUS Rounded 1c",sans-serif}
+.cgl{font-size:12.5px;color:var(--sub)}
+.cth{display:flex;gap:6px;flex-wrap:wrap}
+.cth a{display:block;width:52px;height:52px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.cth img{width:100%;height:100%;object-fit:cover;display:block}
+.cth a{position:relative}.cth b{position:absolute;right:2px;bottom:2px;background:rgba(0,0,0,.72);color:#fff;font-size:11px;border-radius:6px;padding:0 4px;line-height:16px}
+.case .clim dd{white-space:nowrap}.case .clim dt{white-space:nowrap}
+.case .suse{margin-top:auto;font-size:14px;padding:8px}
+@media (max-width:760px){
+  .cases{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:2px 16px 8px;scroll-padding-inline:16px;scrollbar-width:none}
+  .cases::-webkit-scrollbar{display:none}.case{scroll-snap-align:start}
+}
+
+.sharebox{margin-top:12px;background:var(--bg);border:1px dashed var(--line);border-radius:14px;padding:12px}
+.shl{font-weight:800;font-size:14.5px}
+.shprev{white-space:pre-wrap;font-size:13px;color:var(--sub);margin:6px 0 8px;line-height:1.6}
+.sharebox .share{justify-content:flex-start;margin-top:8px}
+.share .si{background:var(--orange);color:#fff;border-color:var(--orange)}
+.shmsg{font-size:12.5px;color:var(--green);font-weight:700;margin:6px 0 0}
+</style></head><body>
+
+<nav class="topnav" aria-label="ページ内メニュー"><ol><li><a href="#s1"><i aria-hidden="true">🧮</i><span>限度額の<wbr>計算</span></a></li><li><a href="#s3"><i aria-hidden="true">🔍</i><span>返礼品を<wbr>選ぶ・探す</span></a></li><li><a href="#s2"><i aria-hidden="true">🧺</i><span>おすすめの<wbr>組み合わせ</span></a></li><li><a href="#faq"><i aria-hidden="true">❓</i><span>よくある<wbr>質問</span></a></li></ol></nav>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="kicker">はむたの資産形成塾 ｜ ふるさと納税編</div>
+      <h1>ふるさと納税 限度額シミュレーター＆はむたの超おすすめ返礼品</h1>
+      <p class="lead">上限の中なら、自己負担は2,000円。まずは限度額を計算して、はむたの超おすすめ返礼品から選んでね。</p>
+    </div>
+    <img src="img/ham.png" alt="はむた">
+  </header>
+
+
+  <div class="picks-top"><h2 class="picks-h" id="picks">迷ったらこの5つ！はむたのイチオシ <small>横にスライドして見てね →</small></h2>
+    <div class="parr"><button type="button" id="pprev" aria-label="前へ">‹</button><button type="button" id="pnext" aria-label="次へ">›</button></div></div>
+  <div class="picks" id="picklist"><article class="pick"><a class="pph" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow"><img src="img/hotate_480.jpg" alt="訳ありホタテ貝柱"><span class="pn">1</span></a><div class="pb"><span class="pbadge">迷ったらコレ</span><h3>訳ありホタテ貝柱</h3><p>人気No.1。普段のおかずにそのまま使える</p><div class="pf"><span class="price">8,500円<small>〜</small></span><a class="btn" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></div></div></article><article class="pick"><a class="pph" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow"><img src="img/koshihikari_480.jpg" alt="コシヒカリ（品種おまかせも）"><span class="pn">2</span></a><div class="pb"><span class="pbadge">家計にいちばん効く</span><h3>コシヒカリ（品種おまかせも）</h3><p>毎日食べるお米で食費がまるっと浮く</p><div class="pf"><span class="price">4,900円<small>〜</small></span><a class="btn" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></div></div></article><article class="pick"><a class="pph" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow"><img src="img/miyazakigyu_480.jpg" alt="宮崎牛 赤身＆霜降り（選べるカット）"><span class="pn">3</span></a><div class="pb"><span class="pbadge">ごちそう枠</span><h3>宮崎牛 赤身＆霜降り（選べるカット）</h3><p>すき焼き・焼肉に。年末のごほうびに</p><div class="pf"><span class="price">13,000円<small>〜</small></span><a class="btn" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></div></div></article><article class="pick"><a class="pph" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow"><img src="img/ikura_480.jpg" alt="醤油漬けイクラ"><span class="pn">4</span></a><div class="pb"><span class="pbadge">年末年始に</span><h3>醤油漬けイクラ</h3><p>ごはんにのせるだけで、お正月のごちそうに</p><div class="pf"><span class="price">16,000円<small>〜</small></span><a class="btn" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></div></div></article><article class="pick"><a class="pph" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow"><img src="img/shine_480.jpg" alt="シャインマスカット（選べる内容量）"><span class="pn">5</span></a><div class="pb"><span class="pbadge">季節のごほうび</span><h3>シャインマスカット（選べる内容量）</h3><p>皮ごと食べられる甘い粒。量も選べる</p><div class="pf"><span class="price">9,000円<small>〜</small></span><a class="btn" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></div></div></article></div>
+  <div class="pdots" id="pdots" aria-hidden="true"></div>
+
+  <h2 id="s1"><span class="ico" aria-hidden="true">🧮</span>限度額シミュレーター</h2>
+  <div class="box">
+    <div class="seg" role="group" aria-label="働き方">
+      <button type="button" id="m-emp" aria-pressed="true">会社員</button><button type="button" id="m-self" aria-pressed="false">個人事業主</button>
+    </div>
+    <form id="sim" class="simform" onsubmit="return false">
+      <label class="f emp"><span>あなたの年収（給与・税込）</span>
+        <span class="yen"><input id="inc" type="number" inputmode="numeric" min="100" max="5000" step="10" value="500"><em>万円</em></span></label>
+      <label class="f self" hidden><span>事業の所得（売上−経費−青色申告特別控除）</span>
+        <span class="yen"><input id="biz" type="number" inputmode="numeric" min="0" max="5000" step="10" value="400"><em>万円</em></span></label>
+      <label class="f self" hidden><span>国民健康保険料（年額・空欄なら目安で計算）</span>
+        <span class="yen"><input id="kok" type="number" inputmode="numeric" min="0" max="1500000" step="1000" placeholder="例：350000"><em>円</em></span></label>
+      <label class="f"><span>家族</span>
+        <select id="fam"><option value="0">独身・共働き</option><option value="1">夫婦（配偶者の年収が少ない）</option></select></label>
+      <label class="f"><span>16〜18歳の子ども</span><select id="k1"><option>0</option><option>1</option><option>2</option><option>3</option></select></label>
+      <label class="f"><span>19〜22歳の子ども</span><select id="k2"><option>0</option><option>1</option><option>2</option><option>3</option></select></label>
+      <label class="f"><span>iDeCoの掛金（月）</span>
+        <span class="yen"><input id="ide" type="number" inputmode="numeric" min="0" max="68000" step="1000" value="0"><em>円</em></span></label>
+    </form>
+    <div class="result" aria-live="polite">
+      <div class="rl">ふるさと納税の限度額（目安）</div>
+      <div class="rv" id="rv">約58,000円</div>
+      <div class="rs">返礼品は最大 <b id="rg">約17,400円分</b>（寄附額の3割）・自己負担 2,000円</div>
+      <div class="ract"><button type="button" class="p1" id="auto">この金額でおまかせ組み合わせ</button><a class="p2" href="#s3">返礼品を自分で選ぶ ↓</a></div>
+    </div>
+    <p class="note n-emp">※会社員・ボーナスなし・東京都（協会けんぽ）・2026年の税制で計算した目安です（はむた試算）。住宅ローン控除・医療費控除・副業などは入っていません。上限ぴったりではなく、少し少なめに寄附するのが安心です。</p>
+    <p class="note n-self" hidden>※個人事業主は、国民年金（2026年度 月17,920円）と国民健康保険料を引いて計算します。国保の額が空欄のときは「所得の約1割＋均等割」のざっくりした目安を使うので、納付書の額を入れるとより正確になります。2026年の税制で計算した目安です（はむた試算）。個人事業主はワンストップ特例が使えないので、確定申告でふるさと納税を申告してください。</p>
+    <p class="note warn">※金額はあくまで目安であり、より正確な金額を知りたい場合は、税理士等にご確認ください。</p>
+    <details class="table-d" open><summary>年収別の早見表（会社員）</summary>
+      <p class="note swipe">← 表は横にスクロールできます →</p>
+      <div class="tablewrap">
+        <table class="qt">
+          <thead><tr><th>年収</th><th>独身・<br>共働き</th><th>夫婦</th><th>夫婦＋<br>高校生</th><th>夫婦＋<br>大学生</th><th>夫婦＋高校生<br>＋大学生</th></tr></thead>
+          <tbody id="qtb"></tbody>
+        </table>
+      </div>
+      <p class="note">※金額はあくまで目安であり、より正確な金額を知りたい場合は、税理士等にご確認ください。</p>
+      <p class="note">※「夫婦」は配偶者の年収が少なく配偶者控除を受けている場合、「高校生」は16〜18歳、「大学生」は19〜22歳の子ども。「共働き」は配偶者控除がない夫婦です。会社員・ボーナスなし・iDeCoなし・2026年の税制で計算した目安（はむた試算）。</p>
+    </details>
+  </div>
+
+  <h3 class="caseh">はむたのモデルケース <small>（はむた試算）</small></h3>
+  <div class="cases" id="cases"><article class="case"><div class="ch2"><span class="ctag">Case1</span>独身の場合</div><div class="cemo" aria-hidden="true">🧑</div><dl><div><dt>家族構成</dt><dd>独身</dd></div><div><dt>年収（給与）</dt><dd>300万円</dd></div><div class="clim"><dt>限度額の目安</dt><dd class="cl" data-sim='{"income": 3000000, "spouse": 0, "k1": 0, "k2": 0}'>—</dd></div><div><dt>実際の寄附金額</dt><dd>22,400円</dd></div><div><dt>税金が安くなる額</dt><dd>20,400円</dd></div><div><dt>寄附先</dt><dd>3自治体</dd></div></dl><div class="cgl">受け取った返礼品</div><div class="cth"><a href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow" title="コシヒカリ（品種おまかせも）"><img src="img/koshihikari_160.jpg" alt="コシヒカリ（品種おまかせも）"></a><a href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow" title="訳ありホタテ貝柱"><img src="img/hotate_160.jpg" alt="訳ありホタテ貝柱"></a><a href="https://a.r10.to/hglRKE" target="_blank" rel="noopener sponsored nofollow" title="訳ありシャインマスカット（1kg以上）"><img src="img/hglRKE_160.jpg" alt="訳ありシャインマスカット（1kg以上）"></a></div><button type="button" class="suse" data-title="Case1の組み合わせ" data-items="[[&quot;コシヒカリ（品種おまかせも）&quot;, 1], [&quot;訳ありホタテ貝柱&quot;, 1], [&quot;訳ありシャインマスカット（1kg以上）&quot;, 1]]">この組み合わせを入れる</button></article><article class="case"><div class="ch2"><span class="ctag">Case2</span>共働き夫婦・子ども1人の場合</div><div class="cemo" aria-hidden="true">👨‍👩‍👦</div><dl><div><dt>家族構成</dt><dd>妻（会社員）・子ども（3歳）</dd></div><div><dt>年収（給与）</dt><dd>650万円</dd></div><div class="clim"><dt>限度額の目安</dt><dd class="cl" data-sim='{"income": 6500000, "spouse": 0, "k1": 0, "k2": 0}'>—</dd></div><div><dt>実際の寄附金額</dt><dd>76,000円</dd></div><div><dt>税金が安くなる額</dt><dd>74,000円</dd></div><div><dt>寄附先</dt><dd>5自治体</dd></div></dl><div class="cgl">受け取った返礼品</div><div class="cth"><a href="https://a.r10.to/hPEt6Y" target="_blank" rel="noopener sponsored nofollow" title="カット生ずわい蟹（生食OK）"><img src="img/hPEt6Y_160.jpg" alt="カット生ずわい蟹（生食OK）"></a><a href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow" title="宮崎牛 赤身＆霜降り（選べるカット）"><img src="img/miyazakigyu_160.jpg" alt="宮崎牛 赤身＆霜降り（選べるカット）"></a><a href="https://a.r10.to/hPIn6E" target="_blank" rel="noopener sponsored nofollow" title="宮崎県産 豚肉4種セット（2.3kg〜）"><img src="img/hPIn6E_160.jpg" alt="宮崎県産 豚肉4種セット（2.3kg〜）"></a><a href="https://a.r10.to/hPf8QW" target="_blank" rel="noopener sponsored nofollow" title="近江牛入りハンバーグ（200g×5個〜）"><img src="img/hPf8QW_160.jpg" alt="近江牛入りハンバーグ（200g×5個〜）"></a><a href="https://a.r10.to/hP07iG" target="_blank" rel="noopener sponsored nofollow" title="あまおう いちご（約500g〜・先行予約）"><img src="img/hP07iG_160.jpg" alt="あまおう いちご（約500g〜・先行予約）"></a><a href="https://a.r10.to/hgqc6c" target="_blank" rel="noopener sponsored nofollow" title="九州産うなぎ蒲焼 4尾（760g以上）"><img src="img/hgqc6c_160.jpg" alt="九州産うなぎ蒲焼 4尾（760g以上）"></a></div><button type="button" class="suse" data-title="Case2の組み合わせ" data-items="[[&quot;カット生ずわい蟹（生食OK）&quot;, 1], [&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 1], [&quot;宮崎県産 豚肉4種セット（2.3kg〜）&quot;, 1], [&quot;近江牛入りハンバーグ（200g×5個〜）&quot;, 1], [&quot;あまおう いちご（約500g〜・先行予約）&quot;, 1], [&quot;九州産うなぎ蒲焼 4尾（760g以上）&quot;, 1]]">この組み合わせを入れる</button></article><article class="case"><div class="ch2"><span class="ctag">Case3</span>夫婦・子ども2人の場合</div><div class="cemo" aria-hidden="true">👨‍👩‍👧‍👦</div><dl><div><dt>家族構成</dt><dd>妻（専業主婦）・子ども（16歳・20歳）</dd></div><div><dt>年収（給与）</dt><dd>1,500万円</dd></div><div class="clim"><dt>限度額の目安</dt><dd class="cl" data-sim='{"income": 15000000, "spouse": 1, "k1": 1, "k2": 1}'>—</dd></div><div><dt>実際の寄附金額</dt><dd>300,400円</dd></div><div><dt>税金が安くなる額</dt><dd>298,400円</dd></div><div><dt>寄附先</dt><dd>5自治体</dd></div></dl><div class="cgl">受け取った返礼品</div><div class="cth"><a href="https://a.r10.to/hgqc6c" target="_blank" rel="noopener sponsored nofollow" title="九州産うなぎ蒲焼 4尾（760g以上）"><img src="img/hgqc6c_160.jpg" alt="九州産うなぎ蒲焼 4尾（760g以上）"><b>×4</b></a><a href="https://a.r10.to/hgMqvz" target="_blank" rel="noopener sponsored nofollow" title="生本ずわいがに 棒肉ポーション"><img src="img/hgMqvz_160.jpg" alt="生本ずわいがに 棒肉ポーション"><b>×3</b></a><a href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow" title="宮崎牛 赤身＆霜降り（選べるカット）"><img src="img/miyazakigyu_160.jpg" alt="宮崎牛 赤身＆霜降り（選べるカット）"><b>×4</b></a><a href="https://a.r10.to/hPIn6E" target="_blank" rel="noopener sponsored nofollow" title="宮崎県産 豚肉4種セット（2.3kg〜）"><img src="img/hPIn6E_160.jpg" alt="宮崎県産 豚肉4種セット（2.3kg〜）"><b>×2</b></a><a href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow" title="醤油漬けイクラ"><img src="img/ikura_160.jpg" alt="醤油漬けイクラ"><b>×3</b></a><a href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow" title="コシヒカリ（品種おまかせも）"><img src="img/koshihikari_160.jpg" alt="コシヒカリ（品種おまかせも）"><b>×6</b></a></div><button type="button" class="suse" data-title="Case3の組み合わせ" data-items="[[&quot;九州産うなぎ蒲焼 4尾（760g以上）&quot;, 4], [&quot;生本ずわいがに 棒肉ポーション&quot;, 3], [&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 4], [&quot;宮崎県産 豚肉4種セット（2.3kg〜）&quot;, 2], [&quot;醤油漬けイクラ&quot;, 3], [&quot;コシヒカリ（品種おまかせも）&quot;, 6]]">この組み合わせを入れる</button></article></div>
+  <p class="note">※限度額は上のシミュレーターと同じ計算（会社員・ボーナスなし・iDeCoなし・2026年の税制）。自己負担2,000円を引いた額が、所得税と住民税から安くなる目安です。※金額はあくまで目安であり、より正確な金額を知りたい場合は、税理士等にご確認ください。</p>
+
+  <h2 id="s2"><span class="ico" aria-hidden="true">🧺</span>おすすめの組み合わせ</h2>
+  <p class="lead2">目的・予算・暮らしから選ぶだけ。ボタンひとつで「あなたの組み合わせ」に入ります。</p>
+  <div class="box sets"><div class="sgrp"><span class="sgl">目的で選ぶ</span><div class="stabs"><button type="button" class="stab" data-set="p1" aria-pressed="false">がっつり</button><button type="button" class="stab" data-set="p2" aria-pressed="false">節約重視</button><button type="button" class="stab" data-set="p3" aria-pressed="false">ごはん重視</button><button type="button" class="stab" data-set="p4" aria-pressed="false">生活重視</button><button type="button" class="stab" data-set="p5" aria-pressed="false">年末ごちそう</button><button type="button" class="stab" data-set="p6" aria-pressed="false">ちょい足し</button></div></div><div class="sgrp"><span class="sgl">予算で選ぶ</span><div class="stabs"><button type="button" class="stab" data-set="b3" aria-pressed="false">3万円</button><button type="button" class="stab" data-set="b6" aria-pressed="false">6万円</button><button type="button" class="stab" data-set="b10" aria-pressed="false">10万円</button></div></div><div class="sgrp"><span class="sgl">暮らしで選ぶ</span><div class="stabs"><button type="button" class="stab" data-set="l1" aria-pressed="false">一人暮らし</button><button type="button" class="stab" data-set="l2" aria-pressed="false">夫婦</button><button type="button" class="stab" data-set="l3" aria-pressed="false">子育て家庭</button></div></div><div class="spanel" id="set-p1" hidden><div class="shead"><h3>がっつりお肉セット</h3><span class="sfor">お肉をたっぷり食べたい人に</span></div><ul class="slist"><li><span class="sth"><img src="img/miyazakigyu_160.jpg" alt=""></span><span class="snm">宮崎牛 赤身＆霜降り（選べるカット）<small><span>宮崎県都城市</span>・<span>13,000円〜</span></small></span><a class="buy" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPIn6E_160.jpg" alt=""></span><span class="snm">宮崎県産 豚肉4種セット（2.3kg〜）<small><span>宮崎県都城市</span>・<span>13,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hPIn6E" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hFSFV4_160.jpg" alt=""></span><span class="snm">鹿児島県産 黒毛和牛 赤身（1kg〜）<small><span>鹿児島県志布志市</span>・<span>15,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hFSFV4" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hY09Xg_160.jpg" alt=""></span><span class="snm">3種の味付け やわらか牛タン<small><span>北海道別海町</span>・<span>7,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hY09Xg" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPf8QW_160.jpg" alt=""></span><span class="snm">近江牛入りハンバーグ（200g×5個〜）<small><span>滋賀県竜王町</span>・<span>8,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hPf8QW" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>56,500円</b></div><p class="snote">牛・豚・牛タン・ハンバーグで冷凍庫がお肉でいっぱいに。都城市は2品まとめて1自治体。（4自治体）</p><button type="button" class="suse" data-items="[[&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 1], [&quot;宮崎県産 豚肉4種セット（2.3kg〜）&quot;, 1], [&quot;鹿児島県産 黒毛和牛 赤身（1kg〜）&quot;, 1], [&quot;3種の味付け やわらか牛タン&quot;, 1], [&quot;近江牛入りハンバーグ（200g×5個〜）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-p2" hidden><div class="shead"><h3>節約重視セット</h3><span class="sfor">毎月の生活費を浮かせたい人に</span></div><ul class="slist"><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hP9BGh_160.jpg" alt=""></span><span class="snm">国産豚こま切れ（1.5kg〜・小分け）<small><span>茨城県下妻市</span>・<span>6,000円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hP9BGh" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hP86R8_160.jpg" alt=""></span><span class="snm">鶏もも・むね カット済み小分け<small><span>熊本県氷川町</span>・<span>5,500円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hP86R8" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hgYbsd_160.jpg" alt=""></span><span class="snm">花王 アタック抗菌EX つめかえ用（850g×3袋〜）<small><span>和歌山県和歌山市</span>・<span>11,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgYbsd" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPtNFi_160.jpg" alt=""></span><span class="snm">トイレットペーパー ダブル（1.5倍巻き）<small><span>静岡県富士市</span>・<span>9,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hPtNFi" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>53,300円</b></div><p class="snote">スーパーで毎週買うものを中心に。お米・豚こま・鶏肉・洗剤・トイレットペーパーで食費と日用品費をまとめて節約。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;コシヒカリ（品種おまかせも）&quot;, 2], [&quot;国産豚こま切れ（1.5kg〜・小分け）&quot;, 2], [&quot;鶏もも・むね カット済み小分け&quot;, 2], [&quot;花王 アタック抗菌EX つめかえ用（850g×3袋〜）&quot;, 1], [&quot;トイレットペーパー ダブル（1.5倍巻き）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-p3" hidden><div class="shead"><h3>ごはん重視セット</h3><span class="sfor">白いごはんが主役の人に</span></div><ul class="slist"><li><span class="sth"><img src="img/sagabiyori_160.jpg" alt=""></span><span class="snm">さがびより<small><span>佐賀県上峰町</span>・<span>7,000円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hYLcus" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/ikura_160.jpg" alt=""></span><span class="snm">醤油漬けイクラ<small><span>北海道白糠町</span>・<span>16,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/sake_160.jpg" alt=""></span><span class="snm">厚切り塩銀鮭<small><span>千葉県銚子市</span>・<span>8,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPu0aP_160.jpg" alt=""></span><span class="snm">骨取りさば 切り身（約1kg〜）<small><span>千葉県銚子市</span>・<span>10,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hPu0aP" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPJPnT_160.jpg" alt=""></span><span class="snm">天然まぐろ ねぎとろ（100g×15袋）<small><span>静岡県吉田町</span>・<span>10,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hPJPnT" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>58,000円</b></div><p class="snote">お米と「ごはんのおとも」の組み合わせ。いくら・鮭・さば・ねぎとろで毎日の丼が楽しみに。（4自治体）</p><button type="button" class="suse" data-items="[[&quot;さがびより&quot;, 2], [&quot;醤油漬けイクラ&quot;, 1], [&quot;厚切り塩銀鮭&quot;, 1], [&quot;骨取りさば 切り身（約1kg〜）&quot;, 1], [&quot;天然まぐろ ねぎとろ（100g×15袋）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-p4" hidden><div class="shead"><h3>生活重視セット</h3><span class="sfor">重い・かさばる日用品を届けてほしい人に</span></div><ul class="slist"><li><span class="sth"><img src="img/hRYhQo_160.jpg" alt=""></span><span class="snm">クラリス ボックスティッシュ 60箱<small><span>栃木県小山市</span>・<span>16,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hRYhQo" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPtNFi_160.jpg" alt=""></span><span class="snm">トイレットペーパー ダブル（1.5倍巻き）<small><span>静岡県富士市</span>・<span>9,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hPtNFi" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hgYbsd_160.jpg" alt=""></span><span class="snm">花王 アタック抗菌EX つめかえ用（850g×3袋〜）<small><span>和歌山県和歌山市</span>・<span>11,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgYbsd" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/h8aLOB_160.jpg" alt=""></span><span class="snm">黒松内銘水 水彩の森（2L×6本〜）<small><span>北海道黒松内町</span>・<span>3,000円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/h8aLOB" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hRhugM_160.jpg" alt=""></span><span class="snm">綾鷹（650ml×24本）<small><span>宮崎県えびの市</span>・<span>8,400円〜</span></small></span><a class="buy" href="https://a.r10.to/hRhugM" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPuuGW_160.jpg" alt=""></span><span class="snm">やかんの麦茶 from 爽健美茶（650ml×24本）<small><span>宮崎県えびの市</span>・<span>8,200円〜</span></small></span><a class="buy" href="https://a.r10.to/hPuuGW" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>59,600円</b></div><p class="snote">ティッシュ・トイレットペーパー・洗剤・水・お茶。買い物で運ぶのが大変なものをまとめて家まで。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;クラリス ボックスティッシュ 60箱&quot;, 1], [&quot;トイレットペーパー ダブル（1.5倍巻き）&quot;, 1], [&quot;花王 アタック抗菌EX つめかえ用（850g×3袋〜）&quot;, 1], [&quot;黒松内銘水 水彩の森（2L×6本〜）&quot;, 2], [&quot;綾鷹（650ml×24本）&quot;, 1], [&quot;やかんの麦茶 from 爽健美茶（650ml×24本）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-p5" hidden><div class="shead"><h3>年末ごちそうセット</h3><span class="sfor">年末年始を豪華にしたい人に</span></div><ul class="slist"><li><span class="sth"><img src="img/hPEt6Y_160.jpg" alt=""></span><span class="snm">カット生ずわい蟹（生食OK）<small><span>福井県敦賀市</span>・<span>11,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hPEt6Y" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/ikura_160.jpg" alt=""></span><span class="snm">醤油漬けイクラ<small><span>北海道白糠町</span>・<span>16,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hgqc6c_160.jpg" alt=""></span><span class="snm">九州産うなぎ蒲焼 4尾（760g以上）<small><span>宮崎県宮崎市</span>・<span>24,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgqc6c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPf0nt_160.jpg" alt=""></span><span class="snm">信州 年越しそば（4人前つゆ付き）<small><span>長野県茅野市</span>・<span>5,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hPf0nt" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>56,000円</b></div><p class="snote">かに・いくら・うなぎに年越しそば。12月に届くものを選んで、お正月のごちそうに。（4自治体）</p><button type="button" class="suse" data-items="[[&quot;カット生ずわい蟹（生食OK）&quot;, 1], [&quot;醤油漬けイクラ&quot;, 1], [&quot;九州産うなぎ蒲焼 4尾（760g以上）&quot;, 1], [&quot;信州 年越しそば（4人前つゆ付き）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-p6" hidden><div class="shead"><h3>ちょい足しセット（5,000円以下）</h3><span class="sfor">限度額の残りを埋めたい人に</span></div><ul class="slist"><li><span class="sth"><img src="img/h8aLOB_160.jpg" alt=""></span><span class="snm">黒松内銘水 水彩の森（2L×6本〜）<small><span>北海道黒松内町</span>・<span>3,000円〜</span></small></span><a class="buy" href="https://a.r10.to/h8aLOB" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hYHzkT_160.jpg" alt=""></span><span class="snm">阿蘇だわら（選べる容量）<small><span>熊本県高森町</span>・<span>4,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYHzkT" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hgqc5Z_160.jpg" alt=""></span><span class="snm">熟成紅はるか さつまいも（2kg〜）<small><span>宮崎県都城市</span>・<span>4,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgqc5Z" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hPf0nt_160.jpg" alt=""></span><span class="snm">信州 年越しそば（4人前つゆ付き）<small><span>長野県茅野市</span>・<span>5,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hPf0nt" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>20,900円</b></div><p class="snote">5,000円以下の返礼品だけ。限度額まであと少し、というときに1品ずつ足せます。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;黒松内銘水 水彩の森（2L×6本〜）&quot;, 1], [&quot;阿蘇だわら（選べる容量）&quot;, 1], [&quot;熟成紅はるか さつまいも（2kg〜）&quot;, 1], [&quot;コシヒカリ（品種おまかせも）&quot;, 1], [&quot;信州 年越しそば（4人前つゆ付き）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-b3" hidden><div class="shead"><h3>3万円セット</h3><span class="sfor">年収300〜400万円くらい</span></div><ul class="slist"><li><span class="sth"><img src="img/hotate_160.jpg" alt=""></span><span class="snm">訳ありホタテ貝柱<small><span>北海道別海町</span>・<span>8,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/sagabiyori_160.jpg" alt=""></span><span class="snm">さがびより<small><span>佐賀県上峰町</span>・<span>7,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYLcus" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/shine_160.jpg" alt=""></span><span class="snm">シャインマスカット（選べる内容量）<small><span>山梨県富士吉田市</span>・<span>9,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>29,400円</b></div><p class="snote">毎日食べるお米を中心に、ちょっとしたごほうびも。（4自治体）</p><button type="button" class="suse" data-items="[[&quot;訳ありホタテ貝柱&quot;, 1], [&quot;コシヒカリ（品種おまかせも）&quot;, 1], [&quot;さがびより&quot;, 1], [&quot;シャインマスカット（選べる内容量）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-b6" hidden><div class="shead"><h3>6万円セット</h3><span class="sfor">年収500万円くらい（独身・共働き）</span></div><ul class="slist"><li><span class="sth"><img src="img/hotate_160.jpg" alt=""></span><span class="snm">訳ありホタテ貝柱<small><span>北海道別海町</span>・<span>8,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/ikura_160.jpg" alt=""></span><span class="snm">醤油漬けイクラ<small><span>北海道白糠町</span>・<span>16,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/miyazakigyu_160.jpg" alt=""></span><span class="snm">宮崎牛 赤身＆霜降り（選べるカット）<small><span>宮崎県都城市</span>・<span>13,000円〜</span></small></span><a class="buy" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/sake_160.jpg" alt=""></span><span class="snm">厚切り塩銀鮭<small><span>千葉県銚子市</span>・<span>8,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>55,300円</b></div><p class="snote">同じ自治体に2回寄附しても1自治体と数えるので、お米を2回にしてもワンストップ特例が使えます。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;訳ありホタテ貝柱&quot;, 1], [&quot;醤油漬けイクラ&quot;, 1], [&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 1], [&quot;厚切り塩銀鮭&quot;, 1], [&quot;コシヒカリ（品種おまかせも）&quot;, 2]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-b10" hidden><div class="shead"><h3>10万円セット</h3><span class="sfor">年収700万円くらい（独身・共働き）</span></div><ul class="slist"><li><span class="sth"><img src="img/hotate_160.jpg" alt=""></span><span class="snm">訳ありホタテ貝柱<small><span>北海道別海町</span>・<span>8,500円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/ikura_160.jpg" alt=""></span><span class="snm">醤油漬けイクラ<small><span>北海道白糠町</span>・<span>16,000円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/miyazakigyu_160.jpg" alt=""></span><span class="snm">宮崎牛 赤身＆霜降り（選べるカット）<small><span>宮崎県都城市</span>・<span>13,000円〜 ×2回</span></small></span><a class="buy" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/sake_160.jpg" alt=""></span><span class="snm">厚切り塩銀鮭<small><span>千葉県銚子市</span>・<span>8,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜 ×3回</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>97,700円</b></div><p class="snote">人気の海鮮とお肉を多めに。5自治体にまとめてワンストップ特例の範囲に。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;訳ありホタテ貝柱&quot;, 2], [&quot;醤油漬けイクラ&quot;, 2], [&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 2], [&quot;厚切り塩銀鮭&quot;, 1], [&quot;コシヒカリ（品種おまかせも）&quot;, 3]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-l1" hidden><div class="shead"><h3>一人暮らしセット</h3><span class="sfor">冷凍庫が小さめの人にも</span></div><ul class="slist"><li><span class="sth"><img src="img/sagabiyori_160.jpg" alt=""></span><span class="snm">さがびより<small><span>佐賀県上峰町</span>・<span>7,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYLcus" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hotate_160.jpg" alt=""></span><span class="snm">訳ありホタテ貝柱<small><span>北海道別海町</span>・<span>8,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/sake_160.jpg" alt=""></span><span class="snm">厚切り塩銀鮭<small><span>千葉県銚子市</span>・<span>8,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/shine_160.jpg" alt=""></span><span class="snm">シャインマスカット（選べる内容量）<small><span>山梨県富士吉田市</span>・<span>9,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>32,500円</b></div><p class="snote">小分けで使いやすいもの中心。焼くだけ・のせるだけで一品になります。（4自治体）</p><button type="button" class="suse" data-items="[[&quot;さがびより&quot;, 1], [&quot;訳ありホタテ貝柱&quot;, 1], [&quot;厚切り塩銀鮭&quot;, 1], [&quot;シャインマスカット（選べる内容量）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-l2" hidden><div class="shead"><h3>夫婦セット</h3><span class="sfor">ふたりで楽しむごちそう多め</span></div><ul class="slist"><li><span class="sth"><img src="img/miyazakigyu_160.jpg" alt=""></span><span class="snm">宮崎牛 赤身＆霜降り（選べるカット）<small><span>宮崎県都城市</span>・<span>13,000円〜</span></small></span><a class="buy" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/ikura_160.jpg" alt=""></span><span class="snm">醤油漬けイクラ<small><span>北海道白糠町</span>・<span>16,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hotate_160.jpg" alt=""></span><span class="snm">訳ありホタテ貝柱<small><span>北海道別海町</span>・<span>8,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/shine_160.jpg" alt=""></span><span class="snm">シャインマスカット（選べる内容量）<small><span>山梨県富士吉田市</span>・<span>9,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>51,400円</b></div><p class="snote">週末のごちそうと年末年始のイクラ、季節のくだもので満足度重視。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 1], [&quot;醤油漬けイクラ&quot;, 1], [&quot;訳ありホタテ貝柱&quot;, 1], [&quot;シャインマスカット（選べる内容量）&quot;, 1], [&quot;コシヒカリ（品種おまかせも）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div><div class="spanel" id="set-l3" hidden><div class="shead"><h3>子育て家庭セット</h3><span class="sfor">食べ盛りの家庭に</span></div><ul class="slist"><li><span class="sth"><img src="img/koshihikari_160.jpg" alt=""></span><span class="snm">コシヒカリ（品種おまかせも）<small><span>茨城県つくばみらい市</span>・<span>4,900円〜 ×3回</span></small></span><a class="buy" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/sake_160.jpg" alt=""></span><span class="snm">厚切り塩銀鮭<small><span>千葉県銚子市</span>・<span>8,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/hotate_160.jpg" alt=""></span><span class="snm">訳ありホタテ貝柱<small><span>北海道別海町</span>・<span>8,500円〜</span></small></span><a class="buy" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/miyazakigyu_160.jpg" alt=""></span><span class="snm">宮崎牛 赤身＆霜降り（選べるカット）<small><span>宮崎県都城市</span>・<span>13,000円〜</span></small></span><a class="buy" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li><li><span class="sth"><img src="img/shine_160.jpg" alt=""></span><span class="snm">シャインマスカット（選べる内容量）<small><span>山梨県富士吉田市</span>・<span>9,000円〜</span></small></span><a class="buy" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow">楽天で見る ›</a></li></ul><div class="ssum"><span>合計（寄附額の目安）</span><b>53,200円</b></div><p class="snote">いちばん家計に効くお米を3回分。お弁当に使える鮭やお肉も。（5自治体）</p><button type="button" class="suse" data-items="[[&quot;コシヒカリ（品種おまかせも）&quot;, 3], [&quot;厚切り塩銀鮭&quot;, 1], [&quot;訳ありホタテ貝柱&quot;, 1], [&quot;宮崎牛 赤身＆霜降り（選べるカット）&quot;, 1], [&quot;シャインマスカット（選べる内容量）&quot;, 1]]">このセットを「あなたの組み合わせ」に入れる</button></div></div>
+
+  <h2 id="tips"><span class="ico" aria-hidden="true">💡</span>失敗しない3つのコツ</h2>
+  <div class="tips">
+    <div class="tip"><strong>上限より少し少なめに</strong><span>年収は年末まで確定しません。超えた分は自己負担になります。</span></div>
+    <div class="tip"><strong>寄附先は5つまで</strong><span>会社員ならワンストップ特例で確定申告なし。同じ自治体は1つと数えます。</span></div>
+    <div class="tip"><strong>締め切りは12月31日</strong><span>ワンストップの申請書は翌年1月10日必着です。</span></div>
+  </div>
+
+  <h2 id="s3"><span class="ico" aria-hidden="true">🔍</span>返礼品を選ぶ・探す</h2>
+  <div class="tools">
+    <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="キーワードで探す（例：かに、ハンバーグ、北海道）" aria-label="キーワード検索"></label>
+    <button type="button" id="favonly" class="chipbtn" aria-pressed="false">☆ 保存したものだけ</button>
+    <div class="vtog" role="group" aria-label="表示の大きさ"><button type="button" id="v3" aria-pressed="true">▦ 3列</button><button type="button" id="v2" aria-pressed="false">▤ 2列（詳しく）</button></div>
+    <select id="sort" class="sortsel" aria-label="並び替え"><option value="rec">おすすめ順</option><option value="cheap">寄附額が安い順</option><option value="rank">人気順</option></select>
+  </div>
+  <nav class="cat"><a href="#sea">海鮮</a><a href="#meat">お肉</a><a href="#sozai">おかず</a><a href="#nabe">年末・鍋</a><a href="#rice">お米</a><a href="#fruit">果物・野菜</a><a href="#drink">飲み物</a><a href="#daily">日用品</a><a href="#goods">雑貨</a></nav>
+  <p id="none" class="note" hidden>見つかりませんでした。別のキーワードで試してね。</p>
+  <section class="catsec"><h3 id="sea" class="cath">海鮮</h3><div class="items"><article class="item" data-id="訳ありホタテ貝柱" data-town="北海道別海町" data-url="https://a.r10.to/hgtirA" data-price="8500" data-rank="1" data-photo="1" data-q="訳ありほたて貝柱北海道別海町海鮮人気no.1。訳ありでも味は同じ、普段使いしやすい。 食品 魚介類・水産加工品 貝類 ほたて"><a class="ph" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow"><img src="img/hotate_480.jpg" alt="訳ありホタテ貝柱" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="訳ありホタテ貝柱を保存">☆</button><span class="rank">楽天 上半期 1位</span><h3>訳ありホタテ貝柱</h3><div class="town">北海道別海町</div><div class="price">8,500円<small>〜（寄附額）</small></div><p class="why">人気No.1。訳ありでも味は同じ、普段使いしやすい。</p><a class="btn" href="https://a.r10.to/hgtirA" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="醤油漬けイクラ" data-town="北海道白糠町" data-url="https://a.r10.to/hYb3Bm" data-price="16000" data-rank="2" data-photo="1" data-q="醤油漬けいくら北海道白糠町海鮮ごはんにのせるだけでごちそうに。年末年始にも。 食品 魚介類・水産加工品 魚卵 いくら・筋子 醤油いくら"><a class="ph" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow"><img src="img/ikura_480.jpg" alt="醤油漬けイクラ" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="醤油漬けイクラを保存">☆</button><span class="rank">楽天 上半期 2位</span><h3>醤油漬けイクラ</h3><div class="town">北海道白糠町</div><div class="price">16,000円<small>〜（寄附額）</small></div><p class="why">ごはんにのせるだけでごちそうに。年末年始にも。</p><a class="btn" href="https://a.r10.to/hYb3Bm" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="厚切り塩銀鮭" data-town="千葉県銚子市" data-url="https://a.r10.to/hgUgmE" data-price="8000" data-rank="3" data-photo="1" data-q="厚切り塩銀鮭千葉県銚子市海鮮焼くだけで一品。お弁当のおかずにも便利。 食品 魚介類・水産加工品 さけ"><a class="ph" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow"><img src="img/sake_480.jpg" alt="厚切り塩銀鮭" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="厚切り塩銀鮭を保存">☆</button><span class="rank">楽天 上半期 3位</span><h3>厚切り塩銀鮭</h3><div class="town">千葉県銚子市</div><div class="price">8,000円<small>〜（寄附額）</small></div><p class="why">焼くだけで一品。お弁当のおかずにも便利。</p><a class="btn" href="https://a.r10.to/hgUgmE" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="大型むきえび（ブラックタイガー）" data-town="福井県敦賀市" data-url="https://a.r10.to/h5Pede" data-price="12000" data-rank="12" data-photo="1" data-q="大型むきえび（ぶらっくたいがー）福井県敦賀市海鮮背わたなし・殻むき済み。えびふらいや炒め物にすぐ使える。 食品 魚介類・水産加工品 えび"><a class="ph" href="https://a.r10.to/h5Pede" target="_blank" rel="noopener sponsored nofollow"><img src="img/h5Pede_480.jpg" alt="大型むきえび（ブラックタイガー）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="大型むきえび（ブラックタイガー）を保存">☆</button><span class="rank">楽天 上半期 12位</span><h3>大型むきえび（ブラックタイガー）</h3><div class="town">福井県敦賀市</div><div class="price">12,000円<small>〜（寄附額）</small></div><p class="why">背ワタなし・殻むき済み。エビフライや炒め物にすぐ使える。</p><a class="btn" href="https://a.r10.to/h5Pede" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="カット生ずわい蟹（生食OK）" data-town="福井県敦賀市" data-url="https://a.r10.to/hPEt6Y" data-price="11000" data-rank="99" data-photo="1" data-q="かっと生ずわい蟹（生食ok）福井県敦賀市海鮮殻むき不要のかっと済み。かにしゃぶにも鍋にも、年末のごちそうに。 食品 魚介類・水産加工品 かに"><a class="ph" href="https://a.r10.to/hPEt6Y" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPEt6Y_480.jpg" alt="カット生ずわい蟹（生食OK）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="カット生ずわい蟹（生食OK）を保存">☆</button><span class="rank">はむた厳選</span><h3>カット生ずわい蟹（生食OK）</h3><div class="town">福井県敦賀市</div><div class="price">11,000円<small>〜（寄附額）</small></div><p class="why">殻むき不要のカット済み。かにしゃぶにも鍋にも、年末のごちそうに。</p><a class="btn" href="https://a.r10.to/hPEt6Y" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="生本ずわいがに 棒肉ポーション" data-town="宮城県気仙沼市" data-url="https://a.r10.to/hgMqvz" data-price="16000" data-rank="99" data-photo="1" data-q="生本ずわいがに 棒肉ぽーしょん宮城県気仙沼市海鮮身がぎっしりの棒肉だけ。むく手間なしで、そのまま鍋やしゃぶしゃぶに。 食品 魚介類・水産加工品 かに"><a class="ph" href="https://a.r10.to/hgMqvz" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgMqvz_480.jpg" alt="生本ずわいがに 棒肉ポーション" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="生本ずわいがに 棒肉ポーションを保存">☆</button><span class="rank">はむた厳選</span><h3>生本ずわいがに 棒肉ポーション</h3><div class="town">宮城県気仙沼市</div><div class="price">16,000円<small>〜（寄附額）</small></div><p class="why">身がぎっしりの棒肉だけ。むく手間なしで、そのまま鍋やしゃぶしゃぶに。</p><a class="btn" href="https://a.r10.to/hgMqvz" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="鮭いくら醤油漬け（250g〜）" data-town="北海道別海町" data-url="https://a.r10.to/h4b0fJ" data-price="13000" data-rank="99" data-photo="1" data-q="鮭いくら醤油漬け（250g〜）北海道別海町海鮮250gから量を選べる。ほたて・牛たんと同じ別海町なので寄附先が増えない。 食品 魚介類・水産加工品 魚卵 いくら・筋子 醤油いくら"><a class="ph" href="https://a.r10.to/h4b0fJ" target="_blank" rel="noopener sponsored nofollow"><img src="img/h4b0fJ_480.jpg" alt="鮭いくら醤油漬け（250g〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="鮭いくら醤油漬け（250g〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>鮭いくら醤油漬け（250g〜）</h3><div class="town">北海道別海町</div><div class="price">13,000円<small>〜（寄附額）</small></div><p class="why">250gから量を選べる。ホタテ・牛タンと同じ別海町なので寄附先が増えない。</p><a class="btn" href="https://a.r10.to/h4b0fJ" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="オホーツク海産 ホタテ玉冷" data-town="北海道紋別市" data-url="https://a.r10.to/hYpCNV" data-price="11000" data-rank="99" data-photo="1" data-q="おほーつく海産 ほたて玉冷北海道紋別市海鮮年間総合らんきんぐ4年連続1位。大粒でお刺身にできる定番のほたて。 食品 魚介類・水産加工品 貝類 ほたて"><a class="ph" href="https://a.r10.to/hYpCNV" target="_blank" rel="noopener sponsored nofollow"><img src="img/hYpCNV_480.jpg" alt="オホーツク海産 ホタテ玉冷" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="オホーツク海産 ホタテ玉冷を保存">☆</button><span class="rank">はむた厳選</span><h3>オホーツク海産 ホタテ玉冷</h3><div class="town">北海道紋別市</div><div class="price">11,000円<small>〜（寄附額）</small></div><p class="why">年間総合ランキング4年連続1位。大粒でお刺身にできる定番のほたて。</p><a class="btn" href="https://a.r10.to/hYpCNV" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="骨取りさば 切り身（約1kg〜）" data-town="千葉県銚子市" data-url="https://a.r10.to/hPu0aP" data-price="10000" data-rank="99" data-photo="1" data-q="骨取りさば 切り身（約1kg〜）千葉県銚子市海鮮骨取り済みで子どもにも食べやすい。焼くだけで一品、無塩・有塩を選べる。 食品 魚介類・水産加工品 さば"><a class="ph" href="https://a.r10.to/hPu0aP" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPu0aP_480.jpg" alt="骨取りさば 切り身（約1kg〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="骨取りさば 切り身（約1kg〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>骨取りさば 切り身（約1kg〜）</h3><div class="town">千葉県銚子市</div><div class="price">10,000円<small>〜（寄附額）</small></div><p class="why">骨取り済みで子どもにも食べやすい。焼くだけで一品、無塩・有塩を選べる。</p><a class="btn" href="https://a.r10.to/hPu0aP" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="骨取り銀鮭 切り身（約1kg〜）" data-town="千葉県銚子市" data-url="https://a.r10.to/hgwD7n" data-price="10000" data-rank="99" data-photo="1" data-q="骨取り銀鮭 切り身（約1kg〜）千葉県銚子市海鮮骨なしで食べやすい。塩銀鮭と同じ銚子市なので、まとめて頼みやすい。 食品 魚介類・水産加工品 さけ"><a class="ph" href="https://a.r10.to/hgwD7n" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgwD7n_480.jpg" alt="骨取り銀鮭 切り身（約1kg〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="骨取り銀鮭 切り身（約1kg〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>骨取り銀鮭 切り身（約1kg〜）</h3><div class="town">千葉県銚子市</div><div class="price">10,000円<small>〜（寄附額）</small></div><p class="why">骨なしで食べやすい。塩銀鮭と同じ銚子市なので、まとめて頼みやすい。</p><a class="btn" href="https://a.r10.to/hgwD7n" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="藁焼き かつおのたたき（訳あり）" data-town="高知県須崎市" data-url="https://a.r10.to/hPDWtZ" data-price="6000" data-rank="99" data-photo="1" data-q="藁焼き かつおのたたき（訳あり）高知県須崎市海鮮本場高知の藁焼き。少ない寄附額から選べて、残りの枠を埋めるのにぴったり。 食品 魚介類・水産加工品 かつお"><a class="ph" href="https://a.r10.to/hPDWtZ" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPDWtZ_480.jpg" alt="藁焼き かつおのたたき（訳あり）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="藁焼き かつおのたたき（訳あり）を保存">☆</button><span class="rank">はむた厳選</span><h3>藁焼き かつおのたたき（訳あり）</h3><div class="town">高知県須崎市</div><div class="price">6,000円<small>〜（寄附額）</small></div><p class="why">本場高知の藁焼き。少ない寄附額から選べて、残りの枠を埋めるのにぴったり。</p><a class="btn" href="https://a.r10.to/hPDWtZ" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="天然まぐろ ねぎとろ（100g×15袋）" data-town="静岡県吉田町" data-url="https://a.r10.to/hPJPnT" data-price="10000" data-rank="99" data-photo="1" data-q="天然まぐろ ねぎとろ（100g×15袋）静岡県吉田町海鮮小分け袋で使う分だけ解凍。丼や手巻き寿司にすぐ使える。 食品 魚介類・水産加工品 まぐろ とろ"><a class="ph" href="https://a.r10.to/hPJPnT" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPJPnT_480.jpg" alt="天然まぐろ ねぎとろ（100g×15袋）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="天然まぐろ ねぎとろ（100g×15袋）を保存">☆</button><span class="rank">はむた厳選</span><h3>天然まぐろ ねぎとろ（100g×15袋）</h3><div class="town">静岡県吉田町</div><div class="price">10,000円<small>〜（寄附額）</small></div><p class="why">小分け袋で使う分だけ解凍。丼や手巻き寿司にすぐ使える。</p><a class="btn" href="https://a.r10.to/hPJPnT" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="九州産うなぎ蒲焼 4尾（760g以上）" data-town="宮崎県宮崎市" data-url="https://a.r10.to/hgqc6c" data-price="24000" data-rank="99" data-photo="1" data-q="九州産うなぎ蒲焼 4尾（760g以上）宮崎県宮崎市海鮮国産うなぎの特上さいず。ちょっといい夕ごはんのごちそう枠に。 食品 惣菜 和風惣菜 蒲焼き"><a class="ph" href="https://a.r10.to/hgqc6c" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgqc6c_480.jpg" alt="九州産うなぎ蒲焼 4尾（760g以上）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="九州産うなぎ蒲焼 4尾（760g以上）を保存">☆</button><span class="rank">はむた厳選</span><h3>九州産うなぎ蒲焼 4尾（760g以上）</h3><div class="town">宮崎県宮崎市</div><div class="price">24,000円<small>〜（寄附額）</small></div><p class="why">国産うなぎの特上サイズ。ちょっといい夕ごはんのごちそう枠に。</p><a class="btn" href="https://a.r10.to/hgqc6c" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="meat" class="cath">お肉</h3><div class="items"><article class="item" data-id="宮崎牛 赤身＆霜降り（選べるカット）" data-town="宮崎県都城市" data-url="https://a.r10.to/h5Abt1" data-price="13000" data-rank="11" data-photo="1" data-q="宮崎牛 赤身＆霜降り（選べるかっと）宮崎県都城市お肉すき焼き・焼肉・しゃぶしゃぶに。かっとと量を選べるごちそう枠。 食品 精肉・肉加工品 牛肉 せっと・詰め合わせ"><a class="ph" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow"><img src="img/miyazakigyu_480.jpg" alt="宮崎牛 赤身＆霜降り（選べるカット）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="宮崎牛 赤身＆霜降り（選べるカット）を保存">☆</button><span class="rank">楽天 上半期 11位</span><h3>宮崎牛 赤身＆霜降り（選べるカット）</h3><div class="town">宮崎県都城市</div><div class="price">13,000円<small>〜（寄附額）</small></div><p class="why">すき焼き・焼肉・しゃぶしゃぶに。カットと量を選べるごちそう枠。</p><a class="btn" href="https://a.r10.to/h5Abt1" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="3種の味付け やわらか牛タン" data-town="北海道別海町" data-url="https://a.r10.to/hY09Xg" data-price="7000" data-rank="9" data-photo="1" data-q="3種の味付け やわらか牛たん北海道別海町お肉焼くだけ簡単。ほたてと同じ町でまとめると寄附先が増えない。 食品 精肉・肉加工品 牛肉 たん"><a class="ph" href="https://a.r10.to/hY09Xg" target="_blank" rel="noopener sponsored nofollow"><img src="img/hY09Xg_480.jpg" alt="3種の味付け やわらか牛タン" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="3種の味付け やわらか牛タンを保存">☆</button><span class="rank">楽天 上半期 9位</span><h3>3種の味付け やわらか牛タン</h3><div class="town">北海道別海町</div><div class="price">7,000円<small>〜（寄附額）</small></div><p class="why">焼くだけ簡単。ホタテと同じ町でまとめると寄附先が増えない。</p><a class="btn" href="https://a.r10.to/hY09Xg" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="鹿児島県産 黒毛和牛 赤身（1kg〜）" data-town="鹿児島県志布志市" data-url="https://a.r10.to/hFSFV4" data-price="15000" data-rank="99" data-photo="1" data-q="鹿児島県産 黒毛和牛 赤身（1kg〜）鹿児島県志布志市お肉すらいすか焼肉用を選べる赤身。普段の夕ごはんで使いやすい。 食品 精肉・肉加工品 牛肉 もも"><a class="ph" href="https://a.r10.to/hFSFV4" target="_blank" rel="noopener sponsored nofollow"><img src="img/hFSFV4_480.jpg" alt="鹿児島県産 黒毛和牛 赤身（1kg〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="鹿児島県産 黒毛和牛 赤身（1kg〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>鹿児島県産 黒毛和牛 赤身（1kg〜）</h3><div class="town">鹿児島県志布志市</div><div class="price">15,000円<small>〜（寄附額）</small></div><p class="why">スライスか焼肉用を選べる赤身。普段の夕ごはんで使いやすい。</p><a class="btn" href="https://a.r10.to/hFSFV4" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="鶏もも・むね カット済み小分け" data-town="熊本県氷川町" data-url="https://a.r10.to/hP86R8" data-price="5500" data-rank="99" data-photo="1" data-q="鶏もも・むね かっと済み小分け熊本県氷川町お肉かっと済みの小分けぱっく。少ない寄附額で毎日のおかずに使える。 食品 精肉・肉加工品 鶏肉 せっと・詰め合わせ"><a class="ph" href="https://a.r10.to/hP86R8" target="_blank" rel="noopener sponsored nofollow"><img src="img/hP86R8_480.jpg" alt="鶏もも・むね カット済み小分け" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="鶏もも・むね カット済み小分けを保存">☆</button><span class="rank">はむた厳選</span><h3>鶏もも・むね カット済み小分け</h3><div class="town">熊本県氷川町</div><div class="price">5,500円<small>〜（寄附額）</small></div><p class="why">カット済みの小分けパック。少ない寄附額で毎日のおかずに使える。</p><a class="btn" href="https://a.r10.to/hP86R8" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="宮崎県産 豚肉4種セット（2.3kg〜）" data-town="宮崎県都城市" data-url="https://a.r10.to/hPIn6E" data-price="13500" data-rank="99" data-photo="1" data-q="宮崎県産 豚肉4種せっと（2.3kg〜）宮崎県都城市お肉ろーす・ばら・肩ろーす・ももの小分けせっと。宮崎牛と同じ都城市でまとめられる。 食品 精肉・肉加工品 豚肉 せっと・詰め合わせ"><a class="ph" href="https://a.r10.to/hPIn6E" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPIn6E_480.jpg" alt="宮崎県産 豚肉4種セット（2.3kg〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="宮崎県産 豚肉4種セット（2.3kg〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>宮崎県産 豚肉4種セット（2.3kg〜）</h3><div class="town">宮崎県都城市</div><div class="price">13,500円<small>〜（寄附額）</small></div><p class="why">ロース・バラ・肩ロース・モモの小分けセット。宮崎牛と同じ都城市でまとめられる。</p><a class="btn" href="https://a.r10.to/hPIn6E" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="国産豚こま切れ（1.5kg〜・小分け）" data-town="茨城県下妻市" data-url="https://a.r10.to/hP9BGh" data-price="6000" data-rank="99" data-photo="1" data-q="国産豚こま切れ（1.5kg〜・小分け）茨城県下妻市お肉いちばん出番の多い豚こま。250gずつの小分けで使いやすい。 食品 精肉・肉加工品 豚肉 その他"><a class="ph" href="https://a.r10.to/hP9BGh" target="_blank" rel="noopener sponsored nofollow"><img src="img/hP9BGh_480.jpg" alt="国産豚こま切れ（1.5kg〜・小分け）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="国産豚こま切れ（1.5kg〜・小分け）を保存">☆</button><span class="rank">はむた厳選</span><h3>国産豚こま切れ（1.5kg〜・小分け）</h3><div class="town">茨城県下妻市</div><div class="price">6,000円<small>〜（寄附額）</small></div><p class="why">いちばん出番の多い豚こま。250gずつの小分けで使いやすい。</p><a class="btn" href="https://a.r10.to/hP9BGh" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="sozai" class="cath">おかず</h3><div class="items"><article class="item" data-id="鉄板焼ハンバーグ デミソース（10個〜）" data-town="福岡県飯塚市" data-url="https://a.r10.to/hFHd27" data-price="14000" data-rank="15" data-photo="1" data-q="鉄板焼はんばーぐ でみそーす（10個〜）福岡県飯塚市おかず温めるだけの個包装。一人暮らしにも家族にも便利。 食品 惣菜 洋風惣菜 はんばーぐ"><a class="ph" href="https://a.r10.to/hFHd27" target="_blank" rel="noopener sponsored nofollow"><img src="img/hFHd27_480.jpg" alt="鉄板焼ハンバーグ デミソース（10個〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="鉄板焼ハンバーグ デミソース（10個〜）を保存">☆</button><span class="rank">楽天 上半期 15位</span><h3>鉄板焼ハンバーグ デミソース（10個〜）</h3><div class="town">福岡県飯塚市</div><div class="price">14,000円<small>〜（寄附額）</small></div><p class="why">温めるだけの個包装。一人暮らしにも家族にも便利。</p><a class="btn" href="https://a.r10.to/hFHd27" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="近江牛入りハンバーグ（200g×5個〜）" data-town="滋賀県竜王町" data-url="https://a.r10.to/hPf8QW" data-price="8000" data-rank="99" data-photo="1" data-q="近江牛入りはんばーぐ（200g×5個〜）滋賀県竜王町おかず近江牛と淡路島産玉ねぎ入り。少ない寄附額から選べる人気のはんばーぐ。 食品 惣菜 洋風惣菜 はんばーぐ"><a class="ph" href="https://a.r10.to/hPf8QW" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPf8QW_480.jpg" alt="近江牛入りハンバーグ（200g×5個〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="近江牛入りハンバーグ（200g×5個〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>近江牛入りハンバーグ（200g×5個〜）</h3><div class="town">滋賀県竜王町</div><div class="price">8,000円<small>〜（寄附額）</small></div><p class="why">近江牛と淡路島産玉ねぎ入り。少ない寄附額から選べる人気のハンバーグ。</p><a class="btn" href="https://a.r10.to/hPf8QW" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="宇都宮餃子 みんみん（冷凍生餃子）" data-town="栃木県宇都宮市" data-url="https://a.r10.to/hgPfrw" data-price="8000" data-rank="99" data-photo="1" data-q="宇都宮餃子 みんみん（冷凍生餃子）栃木県宇都宮市おかず宇都宮の有名店の味。焼くだけで夕ごはんの一品に。 食品 惣菜 中華惣菜・点心 餃子 生餃子"><a class="ph" href="https://a.r10.to/hgPfrw" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgPfrw_480.jpg" alt="宇都宮餃子 みんみん（冷凍生餃子）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="宇都宮餃子 みんみん（冷凍生餃子）を保存">☆</button><span class="rank">はむた厳選</span><h3>宇都宮餃子 みんみん（冷凍生餃子）</h3><div class="town">栃木県宇都宮市</div><div class="price">8,000円<small>〜（寄附額）</small></div><p class="why">宇都宮の有名店の味。焼くだけで夕ごはんの一品に。</p><a class="btn" href="https://a.r10.to/hgPfrw" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="黒豚にんにく餃子（40個〜・タレ付き）" data-town="鹿児島県伊佐市" data-url="https://a.r10.to/hY60KY" data-price="6000" data-rank="99" data-photo="1" data-q="黒豚にんにく餃子（40個〜・たれ付き）鹿児島県伊佐市おかず鹿児島の黒豚入り。8個ずつのぱっくで使う分だけ焼ける。 食品 惣菜 中華惣菜・点心 餃子 せっと・詰め合わせ"><a class="ph" href="https://a.r10.to/hY60KY" target="_blank" rel="noopener sponsored nofollow"><img src="img/hY60KY_480.jpg" alt="黒豚にんにく餃子（40個〜・タレ付き）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="黒豚にんにく餃子（40個〜・タレ付き）を保存">☆</button><span class="rank">はむた厳選</span><h3>黒豚にんにく餃子（40個〜・タレ付き）</h3><div class="town">鹿児島県伊佐市</div><div class="price">6,000円<small>〜（寄附額）</small></div><p class="why">鹿児島の黒豚入り。8個ずつのパックで使う分だけ焼ける。</p><a class="btn" href="https://a.r10.to/hY60KY" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="nabe" class="cath">年末・鍋</h3><div class="items"><article class="item" data-id="信州 年越しそば（4人前つゆ付き）" data-town="長野県茅野市" data-url="https://a.r10.to/hPf0nt" data-price="5000" data-rank="99" data-photo="1" data-q="信州 年越しそば（4人前つゆ付き）長野県茅野市年末・鍋12月発送の新そば。大みそかの年越しそばにぴったり。 食品 麺類 そば"><a class="ph" href="https://a.r10.to/hPf0nt" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPf0nt_480.jpg" alt="信州 年越しそば（4人前つゆ付き）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="信州 年越しそば（4人前つゆ付き）を保存">☆</button><span class="rank">はむた厳選</span><h3>信州 年越しそば（4人前つゆ付き）</h3><div class="town">長野県茅野市</div><div class="price">5,000円<small>〜（寄附額）</small></div><p class="why">12月発送の新そば。大みそかの年越しそばにぴったり。</p><a class="btn" href="https://a.r10.to/hPf0nt" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="博多華味鳥 水たきセット（3〜4人前）" data-town="福岡県宮若市" data-url="https://a.r10.to/hPuz9y" data-price="9000" data-rank="99" data-photo="1" data-q="博多華味鳥 水たきせっと（3〜4人前）福岡県宮若市年末・鍋博多の名店の水たき。すーぷ付きで、鍋の日がそのままごちそうに。 食品 惣菜 鍋せっと 水炊き"><a class="ph" href="https://a.r10.to/hPuz9y" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPuz9y_480.jpg" alt="博多華味鳥 水たきセット（3〜4人前）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="博多華味鳥 水たきセット（3〜4人前）を保存">☆</button><span class="rank">はむた厳選</span><h3>博多華味鳥 水たきセット（3〜4人前）</h3><div class="town">福岡県宮若市</div><div class="price">9,000円<small>〜（寄附額）</small></div><p class="why">博多の名店の水たき。スープ付きで、鍋の日がそのままごちそうに。</p><a class="btn" href="https://a.r10.to/hPuz9y" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="rice" class="cath">お米</h3><div class="items"><article class="item" data-id="さがびより" data-town="佐賀県上峰町" data-url="https://a.r10.to/hYLcus" data-price="7000" data-rank="4" data-photo="1" data-q="さがびより佐賀県上峰町お米少ない寄附額から選べる、食費が浮く定番。 食品 米・雑穀 白米"><a class="ph" href="https://a.r10.to/hYLcus" target="_blank" rel="noopener sponsored nofollow"><img src="img/sagabiyori_480.jpg" alt="さがびより" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="さがびよりを保存">☆</button><span class="rank">楽天 上半期 4位</span><h3>さがびより</h3><div class="town">佐賀県上峰町</div><div class="price">7,000円<small>〜（寄附額）</small></div><p class="why">少ない寄附額から選べる、食費が浮く定番。</p><a class="btn" href="https://a.r10.to/hYLcus" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="コシヒカリ（品種おまかせも）" data-town="茨城県つくばみらい市" data-url="https://a.r10.to/hPiF7c" data-price="4900" data-rank="6" data-photo="1" data-q="こしひかり（品種おまかせも）茨城県つくばみらい市お米毎日食べるお米は、いちばん家計に効く返礼品。 食品 米・雑穀 白米"><a class="ph" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow"><img src="img/koshihikari_480.jpg" alt="コシヒカリ（品種おまかせも）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="コシヒカリ（品種おまかせも）を保存">☆</button><span class="rank">楽天 上半期 6位</span><h3>コシヒカリ（品種おまかせも）</h3><div class="town">茨城県つくばみらい市</div><div class="price">4,900円<small>〜（寄附額）</small></div><p class="why">毎日食べるお米は、いちばん家計に効く返礼品。</p><a class="btn" href="https://a.r10.to/hPiF7c" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="阿蘇だわら（選べる容量）" data-town="熊本県高森町" data-url="https://a.r10.to/hYHzkT" data-price="4000" data-rank="99" data-photo="1" data-q="阿蘇だわら（選べる容量）熊本県高森町お米4,000円から選べる、いちばん気軽なお米。あと少しの枠を埋めたいときに。 食品 米・雑穀 白米"><a class="ph" href="https://a.r10.to/hYHzkT" target="_blank" rel="noopener sponsored nofollow"><img src="img/hYHzkT_480.jpg" alt="阿蘇だわら（選べる容量）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="阿蘇だわら（選べる容量）を保存">☆</button><span class="rank">はむた厳選</span><h3>阿蘇だわら（選べる容量）</h3><div class="town">熊本県高森町</div><div class="price">4,000円<small>〜（寄附額）</small></div><p class="why">4,000円から選べる、いちばん気軽なお米。あと少しの枠を埋めたいときに。</p><a class="btn" href="https://a.r10.to/hYHzkT" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="熊本 ふるさと無洗米" data-town="熊本県御船町" data-url="https://a.r10.to/hRaQPA" data-price="6500" data-rank="99" data-photo="1" data-q="熊本 ふるさと無洗米熊本県御船町お米研がずに炊ける無洗米。忙しい家庭や一人暮らしの手間を減らせる。 食品 米・雑穀 白米"><a class="ph" href="https://a.r10.to/hRaQPA" target="_blank" rel="noopener sponsored nofollow"><img src="img/hRaQPA_480.jpg" alt="熊本 ふるさと無洗米" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="熊本 ふるさと無洗米を保存">☆</button><span class="rank">はむた厳選</span><h3>熊本 ふるさと無洗米</h3><div class="town">熊本県御船町</div><div class="price">6,500円<small>〜（寄附額）</small></div><p class="why">研がずに炊ける無洗米。忙しい家庭や一人暮らしの手間を減らせる。</p><a class="btn" href="https://a.r10.to/hRaQPA" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="fruit" class="cath">果物・野菜</h3><div class="items"><article class="item" data-id="シャインマスカット（選べる内容量）" data-town="山梨県富士吉田市" data-url="https://a.r10.to/hgb2Xv" data-price="9000" data-rank="19" data-photo="1" data-q="しゃいんますかっと（選べる内容量）山梨県富士吉田市果物・野菜皮ごと食べられる甘い粒。500gから選べて、季節のごほうびに。 食品 ふるーつ・果物 ぶどう"><a class="ph" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow"><img src="img/shine_480.jpg" alt="シャインマスカット（選べる内容量）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="シャインマスカット（選べる内容量）を保存">☆</button><span class="rank">楽天 上半期 19位</span><h3>シャインマスカット（選べる内容量）</h3><div class="town">山梨県富士吉田市</div><div class="price">9,000円<small>〜（寄附額）</small></div><p class="why">皮ごと食べられる甘い粒。500gから選べて、季節のごほうびに。</p><a class="btn" href="https://a.r10.to/hgb2Xv" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="有田みかん「未来への虹」（5kg・10kg）" data-town="和歌山県有田市" data-url="https://a.r10.to/h5MNNu" data-price="10000" data-rank="99" data-photo="1" data-q="有田みかん「未来への虹」（5kg・10kg）和歌山県有田市果物・野菜世界農業遺産の産地から届く本場の有田みかん。冬のこたつのおともに、家族でたっぷり。 食品 ふるーつ・果物 みかん"><a class="ph" href="https://a.r10.to/h5MNNu" target="_blank" rel="noopener sponsored nofollow"><img src="img/h5MNNu_480.jpg" alt="有田みかん「未来への虹」（5kg・10kg）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="有田みかん「未来への虹」（5kg・10kg）を保存">☆</button><span class="rank">はむた厳選</span><h3>有田みかん「未来への虹」（5kg・10kg）</h3><div class="town">和歌山県有田市</div><div class="price">10,000円<small>〜（寄附額）</small></div><p class="why">世界農業遺産の産地から届く本場の有田みかん。冬のこたつのおともに、家族でたっぷり。</p><a class="btn" href="https://a.r10.to/h5MNNu" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="岡山県産 シャインマスカット（晴王）" data-town="岡山県矢掛町" data-url="https://a.r10.to/hgYbGv" data-price="9000" data-rank="99" data-photo="1" data-q="岡山県産 しゃいんますかっと（晴王）岡山県矢掛町果物・野菜岡山県限定ぶらんどの晴王。約650gから選べて、定期便もある。 食品 ふるーつ・果物 ぶどう"><a class="ph" href="https://a.r10.to/hgYbGv" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgYbGv_480.jpg" alt="岡山県産 シャインマスカット（晴王）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="岡山県産 シャインマスカット（晴王）を保存">☆</button><span class="rank">はむた厳選</span><h3>岡山県産 シャインマスカット（晴王）</h3><div class="town">岡山県矢掛町</div><div class="price">9,000円<small>〜（寄附額）</small></div><p class="why">岡山県限定ブランドの晴王。約650gから選べて、定期便もある。</p><a class="btn" href="https://a.r10.to/hgYbGv" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="あまおう いちご（約500g〜・先行予約）" data-town="福岡県小竹町" data-url="https://a.r10.to/hP07iG" data-price="6500" data-rank="99" data-photo="1" data-q="あまおう いちご（約500g〜・先行予約）福岡県小竹町果物・野菜2027年3〜5月に届く先行予約。春のごほうびに。 食品 ふるーつ・果物 いちご"><a class="ph" href="https://a.r10.to/hP07iG" target="_blank" rel="noopener sponsored nofollow"><img src="img/hP07iG_480.jpg" alt="あまおう いちご（約500g〜・先行予約）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="あまおう いちご（約500g〜・先行予約）を保存">☆</button><span class="rank">はむた厳選</span><h3>あまおう いちご（約500g〜・先行予約）</h3><div class="town">福岡県小竹町</div><div class="price">6,500円<small>〜（寄附額）</small></div><p class="why">2027年3〜5月に届く先行予約。春のごほうびに。</p><a class="btn" href="https://a.r10.to/hP07iG" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="鳥取県産 王秋梨（3kg〜）" data-town="鳥取県北栄町" data-url="https://a.r10.to/h5xdR4" data-price="12000" data-rank="99" data-photo="1" data-q="鳥取県産 王秋梨（3kg〜）鳥取県北栄町果物・野菜10月下旬〜12月に届く大玉の梨。日持ちしやすい品種。 食品 ふるーつ・果物 和梨"><a class="ph" href="https://a.r10.to/h5xdR4" target="_blank" rel="noopener sponsored nofollow"><img src="img/h5xdR4_480.jpg" alt="鳥取県産 王秋梨（3kg〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="鳥取県産 王秋梨（3kg〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>鳥取県産 王秋梨（3kg〜）</h3><div class="town">鳥取県北栄町</div><div class="price">12,000円<small>〜（寄附額）</small></div><p class="why">10月下旬〜12月に届く大玉の梨。日持ちしやすい品種。</p><a class="btn" href="https://a.r10.to/h5xdR4" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="訳ありシャインマスカット（1kg以上）" data-town="長野県中野市" data-url="https://a.r10.to/hglRKE" data-price="9000" data-rank="99" data-photo="1" data-q="訳ありしゃいんますかっと（1kg以上）長野県中野市果物・野菜見た目に訳ありでも味は同じ。1kg以上たっぷり、11月までの旬に。 食品 ふるーつ・果物 ぶどう"><a class="ph" href="https://a.r10.to/hglRKE" target="_blank" rel="noopener sponsored nofollow"><img src="img/hglRKE_480.jpg" alt="訳ありシャインマスカット（1kg以上）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="訳ありシャインマスカット（1kg以上）を保存">☆</button><span class="rank">はむた厳選</span><h3>訳ありシャインマスカット（1kg以上）</h3><div class="town">長野県中野市</div><div class="price">9,000円<small>〜（寄附額）</small></div><p class="why">見た目に訳ありでも味は同じ。1kg以上たっぷり、11月までの旬に。</p><a class="btn" href="https://a.r10.to/hglRKE" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="熟成紅はるか さつまいも（2kg〜）" data-town="宮崎県都城市" data-url="https://a.r10.to/hgqc5Z" data-price="4000" data-rank="99" data-photo="1" data-q="熟成紅はるか さつまいも（2kg〜）宮崎県都城市果物・野菜4,000円から選べる熟成さつまいも。焼き芋にすると甘さが際立つ。 食品 野菜・きのこ さつまいも"><a class="ph" href="https://a.r10.to/hgqc5Z" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgqc5Z_480.jpg" alt="熟成紅はるか さつまいも（2kg〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="熟成紅はるか さつまいも（2kg〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>熟成紅はるか さつまいも（2kg〜）</h3><div class="town">宮崎県都城市</div><div class="price">4,000円<small>〜（寄附額）</small></div><p class="why">4,000円から選べる熟成さつまいも。焼き芋にすると甘さが際立つ。</p><a class="btn" href="https://a.r10.to/hgqc5Z" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="drink" class="cath">飲み物</h3><div class="items"><article class="item" data-id="アサヒスーパードライ（350ml×24本〜）" data-town="茨城県守谷市" data-url="https://a.r10.to/hYbXDt" data-price="14500" data-rank="99" data-photo="1" data-q="あさひすーぱーどらい（350ml×24本〜）茨城県守谷市飲み物あさひの工場がある守谷市から。重いびーるの箱を家まで届けてもらえる。 びーる・洋酒 びーる・発泡酒 びーる"><a class="ph" href="https://a.r10.to/hYbXDt" target="_blank" rel="noopener sponsored nofollow"><img src="img/hYbXDt_480.jpg" alt="アサヒスーパードライ（350ml×24本〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="アサヒスーパードライ（350ml×24本〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>アサヒスーパードライ（350ml×24本〜）</h3><div class="town">茨城県守谷市</div><div class="price">14,500円<small>〜（寄附額）</small></div><p class="why">アサヒの工場がある守谷市から。重いビールの箱を家まで届けてもらえる。</p><a class="btn" href="https://a.r10.to/hYbXDt" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="黒松内銘水 水彩の森（2L×6本〜）" data-town="北海道黒松内町" data-url="https://a.r10.to/h8aLOB" data-price="3000" data-rank="99" data-photo="1" data-q="黒松内銘水 水彩の森（2l×6本〜）北海道黒松内町飲み物3,000円から選べる天然水。限度額の端数を埋めるのにぴったり。 水・そふとどりんく 水・炭酸水"><a class="ph" href="https://a.r10.to/h8aLOB" target="_blank" rel="noopener sponsored nofollow"><img src="img/h8aLOB_480.jpg" alt="黒松内銘水 水彩の森（2L×6本〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="黒松内銘水 水彩の森（2L×6本〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>黒松内銘水 水彩の森（2L×6本〜）</h3><div class="town">北海道黒松内町</div><div class="price">3,000円<small>〜（寄附額）</small></div><p class="why">3,000円から選べる天然水。限度額の端数を埋めるのにぴったり。</p><a class="btn" href="https://a.r10.to/h8aLOB" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="い・ろ・は・す 北海道限定ラベル（540ml×24本〜）" data-town="北海道札幌市" data-url="https://a.r10.to/h5iZSJ" data-price="8000" data-rank="99" data-photo="1" data-q="い・ろ・は・す 北海道限定らべる（540ml×24本〜）北海道札幌市飲み物持ち歩きやすい540ml。定期便も選べる。 水・そふとどりんく 水・炭酸水"><a class="ph" href="https://a.r10.to/h5iZSJ" target="_blank" rel="noopener sponsored nofollow"><img src="img/h5iZSJ_480.jpg" alt="い・ろ・は・す 北海道限定ラベル（540ml×24本〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="い・ろ・は・す 北海道限定ラベル（540ml×24本〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>い・ろ・は・す 北海道限定ラベル（540ml×24本〜）</h3><div class="town">北海道札幌市</div><div class="price">8,000円<small>〜（寄附額）</small></div><p class="why">持ち歩きやすい540ml。定期便も選べる。</p><a class="btn" href="https://a.r10.to/h5iZSJ" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="綾鷹（650ml×24本）" data-town="宮崎県えびの市" data-url="https://a.r10.to/hRhugM" data-price="8400" data-rank="99" data-photo="1" data-q="綾鷹（650ml×24本）宮崎県えびの市飲み物定番の緑茶を箱で。重いぺっとぼとるが玄関まで届く。 水・そふとどりんく お茶・紅茶 お茶飲料 その他"><a class="ph" href="https://a.r10.to/hRhugM" target="_blank" rel="noopener sponsored nofollow"><img src="img/hRhugM_480.jpg" alt="綾鷹（650ml×24本）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="綾鷹（650ml×24本）を保存">☆</button><span class="rank">はむた厳選</span><h3>綾鷹（650ml×24本）</h3><div class="town">宮崎県えびの市</div><div class="price">8,400円<small>〜（寄附額）</small></div><p class="why">定番の緑茶を箱で。重いペットボトルが玄関まで届く。</p><a class="btn" href="https://a.r10.to/hRhugM" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="やかんの麦茶 from 爽健美茶（650ml×24本）" data-town="宮崎県えびの市" data-url="https://a.r10.to/hPuuGW" data-price="8200" data-rank="99" data-photo="1" data-q="やかんの麦茶 from 爽健美茶（650ml×24本）宮崎県えびの市飲み物のんかふぇいんで家族みんなで飲める。綾鷹と同じえびの市。 水・そふとどりんく お茶・紅茶 お茶飲料 植物茶"><a class="ph" href="https://a.r10.to/hPuuGW" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPuuGW_480.jpg" alt="やかんの麦茶 from 爽健美茶（650ml×24本）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="やかんの麦茶 from 爽健美茶（650ml×24本）を保存">☆</button><span class="rank">はむた厳選</span><h3>やかんの麦茶 from 爽健美茶（650ml×24本）</h3><div class="town">宮崎県えびの市</div><div class="price">8,200円<small>〜（寄附額）</small></div><p class="why">ノンカフェインで家族みんなで飲める。綾鷹と同じえびの市。</p><a class="btn" href="https://a.r10.to/hPuuGW" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="爽健美茶（600ml×24本）" data-town="佐賀県基山町" data-url="https://a.r10.to/hPb6kV" data-price="7700" data-rank="99" data-photo="1" data-q="爽健美茶（600ml×24本）佐賀県基山町飲み物かふぇいんぜろのぶれんど茶。毎日飲む家のお茶に。 水・そふとどりんく お茶・紅茶 お茶飲料 その他"><a class="ph" href="https://a.r10.to/hPb6kV" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPb6kV_480.jpg" alt="爽健美茶（600ml×24本）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="爽健美茶（600ml×24本）を保存">☆</button><span class="rank">はむた厳選</span><h3>爽健美茶（600ml×24本）</h3><div class="town">佐賀県基山町</div><div class="price">7,700円<small>〜（寄附額）</small></div><p class="why">カフェインゼロのブレンド茶。毎日飲む家のお茶に。</p><a class="btn" href="https://a.r10.to/hPb6kV" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="daily" class="cath">日用品</h3><div class="items"><article class="item" data-id="クラリス ボックスティッシュ 60箱" data-town="栃木県小山市" data-url="https://a.r10.to/hRYhQo" data-price="16500" data-rank="7" data-photo="1" data-q="くらりす ぼっくすてぃっしゅ 60箱栃木県小山市日用品重くてかさばる日用品こそ、家まで届くのがうれしい。 日用品雑貨・文房具・手芸 日用消耗品 てぃっしゅ・といれっとぺーぱー てぃっしゅぺーぱー"><a class="ph" href="https://a.r10.to/hRYhQo" target="_blank" rel="noopener sponsored nofollow"><img src="img/hRYhQo_480.jpg" alt="クラリス ボックスティッシュ 60箱" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="クラリス ボックスティッシュ 60箱を保存">☆</button><span class="rank">楽天 上半期 7位</span><h3>クラリス ボックスティッシュ 60箱</h3><div class="town">栃木県小山市</div><div class="price">16,500円<small>〜（寄附額）</small></div><p class="why">重くてかさばる日用品こそ、家まで届くのがうれしい。</p><a class="btn" href="https://a.r10.to/hRYhQo" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="トイレットペーパー ダブル（1.5倍巻き）" data-town="静岡県富士市" data-url="https://a.r10.to/hPtNFi" data-price="9500" data-rank="99" data-photo="1" data-q="といれっとぺーぱー だぶる（1.5倍巻き）静岡県富士市日用品1.5倍巻きで交換の手間が少ない。重い日用品こそ家まで届くとらく。 日用品雑貨・文房具・手芸 日用消耗品 てぃっしゅ・といれっとぺーぱー といれっとぺーぱー"><a class="ph" href="https://a.r10.to/hPtNFi" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPtNFi_480.jpg" alt="トイレットペーパー ダブル（1.5倍巻き）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="トイレットペーパー ダブル（1.5倍巻き）を保存">☆</button><span class="rank">はむた厳選</span><h3>トイレットペーパー ダブル（1.5倍巻き）</h3><div class="town">静岡県富士市</div><div class="price">9,500円<small>〜（寄附額）</small></div><p class="why">1.5倍巻きで交換の手間が少ない。重い日用品こそ家まで届くとラク。</p><a class="btn" href="https://a.r10.to/hPtNFi" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="エリエール 消臭＋ トイレットティシュー" data-town="静岡県富士宮市" data-url="https://a.r10.to/hRaQc2" data-price="10900" data-rank="99" data-photo="1" data-q="えりえーる 消臭＋ といれっとてぃしゅー静岡県富士宮市日用品おなじみのえりえーる。消臭たいぷでほんのり香る。 日用品雑貨・文房具・手芸 日用消耗品 てぃっしゅ・といれっとぺーぱー といれっとぺーぱー"><a class="ph" href="https://a.r10.to/hRaQc2" target="_blank" rel="noopener sponsored nofollow"><img src="img/hRaQc2_480.jpg" alt="エリエール 消臭＋ トイレットティシュー" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="エリエール 消臭＋ トイレットティシューを保存">☆</button><span class="rank">はむた厳選</span><h3>エリエール 消臭＋ トイレットティシュー</h3><div class="town">静岡県富士宮市</div><div class="price">10,900円<small>〜（寄附額）</small></div><p class="why">おなじみのエリエール。消臭タイプでほんのり香る。</p><a class="btn" href="https://a.r10.to/hRaQc2" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="トイレットペーパー ダブル（選べるロール数）" data-town="静岡県沼津市" data-url="https://a.r10.to/hgYbgm" data-price="12000" data-rank="99" data-photo="1" data-q="といれっとぺーぱー だぶる（選べるろーる数）静岡県沼津市日用品配送月を選べて、24ろーるの小容量から頼める。 日用品雑貨・文房具・手芸 日用消耗品 てぃっしゅ・といれっとぺーぱー といれっとぺーぱー"><a class="ph" href="https://a.r10.to/hgYbgm" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgYbgm_480.jpg" alt="トイレットペーパー ダブル（選べるロール数）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="トイレットペーパー ダブル（選べるロール数）を保存">☆</button><span class="rank">はむた厳選</span><h3>トイレットペーパー ダブル（選べるロール数）</h3><div class="town">静岡県沼津市</div><div class="price">12,000円<small>〜（寄附額）</small></div><p class="why">配送月を選べて、24ロールの小容量から頼める。</p><a class="btn" href="https://a.r10.to/hgYbgm" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="花王 アタック抗菌EX つめかえ用（850g×3袋〜）" data-town="和歌山県和歌山市" data-url="https://a.r10.to/hgYbsd" data-price="11000" data-rank="99" data-photo="1" data-q="花王 あたっく抗菌ex つめかえ用（850g×3袋〜）和歌山県和歌山市日用品毎日使う洗濯洗剤こそ、ふるさと納税で浮かせたい。 日用品雑貨・文房具・手芸 日用消耗品 洗剤・柔軟剤・くりーなー 洗濯用洗剤・柔軟剤 洗濯用洗剤"><a class="ph" href="https://a.r10.to/hgYbsd" target="_blank" rel="noopener sponsored nofollow"><img src="img/hgYbsd_480.jpg" alt="花王 アタック抗菌EX つめかえ用（850g×3袋〜）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="花王 アタック抗菌EX つめかえ用（850g×3袋〜）を保存">☆</button><span class="rank">はむた厳選</span><h3>花王 アタック抗菌EX つめかえ用（850g×3袋〜）</h3><div class="town">和歌山県和歌山市</div><div class="price">11,000円<small>〜（寄附額）</small></div><p class="why">毎日使う洗濯洗剤こそ、ふるさと納税で浮かせたい。</p><a class="btn" href="https://a.r10.to/hgYbsd" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="ライオン トップ クリアリキッド 抗菌" data-town="千葉県市原市" data-url="https://a.r10.to/hg3FZr" data-price="8000" data-rank="99" data-photo="1" data-q="らいおん とっぷ くりありきっど 抗菌千葉県市原市日用品部屋干しのにおいを抑える抗菌たいぷ。本体か詰め替えを選べる。 日用品雑貨・文房具・手芸 日用消耗品 洗剤・柔軟剤・くりーなー 洗濯用洗剤・柔軟剤 洗濯用洗剤"><a class="ph" href="https://a.r10.to/hg3FZr" target="_blank" rel="noopener sponsored nofollow"><img src="img/hg3FZr_480.jpg" alt="ライオン トップ クリアリキッド 抗菌" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="ライオン トップ クリアリキッド 抗菌を保存">☆</button><span class="rank">はむた厳選</span><h3>ライオン トップ クリアリキッド 抗菌</h3><div class="town">千葉県市原市</div><div class="price">8,000円<small>〜（寄附額）</small></div><p class="why">部屋干しのにおいを抑える抗菌タイプ。本体か詰め替えを選べる。</p><a class="btn" href="https://a.r10.to/hg3FZr" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section><section class="catsec"><h3 id="goods" class="cath">雑貨</h3><div class="items"><article class="item" data-id="燕三条 IH対応 よせしゃぶ鍋＋お玉セット" data-town="新潟県燕市" data-url="https://a.r10.to/hkS5lJ" data-price="13000" data-rank="99" data-photo="1" data-q="燕三条 ih対応 よせしゃぶ鍋＋お玉せっと新潟県燕市雑貨ものづくりの町・燕三条の鍋。冬の鍋料理に長く使える。 きっちん用品・食器・調理器具 鍋・ふらいぱん 鍋 しゃぶしゃぶ鍋"><a class="ph" href="https://a.r10.to/hkS5lJ" target="_blank" rel="noopener sponsored nofollow"><img src="img/hkS5lJ_480.jpg" alt="燕三条 IH対応 よせしゃぶ鍋＋お玉セット" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="燕三条 IH対応 よせしゃぶ鍋＋お玉セットを保存">☆</button><span class="rank">はむた厳選</span><h3>燕三条 IH対応 よせしゃぶ鍋＋お玉セット</h3><div class="town">新潟県燕市</div><div class="price">13,000円<small>〜（寄附額）</small></div><p class="why">ものづくりの町・燕三条の鍋。冬の鍋料理に長く使える。</p><a class="btn" href="https://a.r10.to/hkS5lJ" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article><article class="item" data-id="純金 K24 延べ棒の置物（約0.3g）" data-town="山梨県甲府市" data-url="https://a.r10.to/hPl99M" data-price="55000" data-rank="99" data-photo="1" data-q="純金 k24 延べ棒の置物（約0.3g）山梨県甲府市雑貨宝飾の町・甲府の開運置物。金は約0.3gなので、資産づくり目的には向かない記念品として。 いんてりあ・寝具・収納 いんてりあ小物・置物 置物"><a class="ph" href="https://a.r10.to/hPl99M" target="_blank" rel="noopener sponsored nofollow"><img src="img/hPl99M_480.jpg" alt="純金 K24 延べ棒の置物（約0.3g）" loading="lazy"></a><button type="button" class="fav" aria-pressed="false" aria-label="純金 K24 延べ棒の置物（約0.3g）を保存">☆</button><span class="rank">はむた厳選</span><h3>純金 K24 延べ棒の置物（約0.3g）</h3><div class="town">山梨県甲府市</div><div class="price">55,000円<small>〜（寄附額）</small></div><p class="why">宝飾の町・甲府の開運置物。金は約0.3gなので、資産づくり目的には向かない記念品として。</p><a class="btn" href="https://a.r10.to/hPl99M" target="_blank" rel="noopener sponsored nofollow"><span class="bl">楽天ふるさと納税で</span><span class="bs">楽天で</span>見る ›</a></article></div></section>
+  <a id="cart" class="cart" href="#mycombo" hidden>★ 保存 <b id="cn">0</b>件・合計 <b id="ct">0円</b><span class="go">組み合わせを見る ›</span><span id="cl" hidden></span></a>
+
+  <h2 id="mycombo"><span class="ico" aria-hidden="true">⭐</span>あなたの組み合わせ</h2>
+  <div class="box combo">
+    <div id="combo-list"></div>
+    <p id="combo-empty" class="empty">「おすすめの組み合わせ」を入れるか、返礼品の ☆ を押すと、ここに並びます。</p>
+    <div class="sum"><span>選んでいる合計（概算）</span><span id="combo-total">0円</span></div>
+    <div class="lim"><span>あなたの限度額（目安）</span><span id="combo-limit">—</span></div>
+    <p id="combo-msg" class="cmsg"></p>
+    <p id="toast" class="toast" hidden><span id="toast-t"></span> <button type="button" id="undo">元に戻す</button></p>
+    <p class="note">※寄附先は<b id="combo-towns">0</b>自治体<span id="combo-os">なので、ワンストップ特例が使えます</span>。寄附額は最低額の目安です。</p>
+    <div class="sharebox">
+      <div class="shl">📣 選んだ返礼品をシェア</div>
+      <p id="shprev" class="shprev" hidden></p>
+      <div class="share"><a class="sx" id="shx" href="#" target="_blank" rel="noopener">𝕏 ポスト</a><a class="sl" id="shl" href="#" target="_blank" rel="noopener">LINEで送る</a><button type="button" id="shimg" class="si" hidden>🖼 シェア画像を保存</button><button type="button" id="shc">文章をコピー</button></div>
+      <p id="shmsg" class="shmsg" hidden></p>
+    </div>
+  </div>
+
+  <h2 id="faq"><span class="ico" aria-hidden="true">❓</span>よくある質問</h2>
+  <div class="faq"><details><summary>ワンストップ特例の申請書は、いつまでに出せばいい？</summary><p>寄附した翌年の1月10日必着です。寄附先ごとに1枚ずつ必要です。自治体によっては、マイナンバーカードを使ってオンラインで申請できます。</p></details><details><summary>ワンストップ特例が使えないのは、どんな人？</summary><p>確定申告をする人です。たとえば個人事業主、医療費控除を受ける人、住宅ローン控除の1年目の人、年収2,000万円を超える人など。寄附先が6自治体以上のときも使えません。確定申告をするなら、ふるさと納税も確定申告に書きます（ワンストップ特例の申請は無効になります）。</p></details><details><summary>住宅ローン控除と一緒に使える？</summary><p>使えます。ただ、確定申告で申告する年は、住宅ローン控除で所得税がほぼ0円になると、ふるさと納税の控除の一部を使い切れないことがあります。上限より少なめに寄附するのが安心です。</p></details><details><summary>年の途中で転職・退職したら？</summary><p>限度額は、その年1月〜12月の収入の合計で決まります。転職した年は、前の会社と今の会社の源泉徴収票を合わせて考えます。退職などで年収が下がりそうなら、少なめにしておきましょう。</p></details><details><summary>共働きの夫婦は、どう寄附する？</summary><p>夫と妻それぞれに限度額があります。寄附する人の名義と、税金が安くなる人（その人の給与で税金を払っている人）を同じにしてください。上のシミュレーターは「独身・共働き」で、ひとりずつ計算できます。</p></details><details><summary>12月31日ギリギリでも間に合う？</summary><p>寄附した日は、クレジットカードなら決済が終わった日になります。銀行振込や郵便振替は年内に入金が確認できないことがあるので、年末はクレジットカード払いが安心です。</p></details><details><summary>税金はいつ安くなる？</summary><p>ワンストップ特例なら、翌年6月からの住民税が少しずつ安くなります。確定申告なら、所得税の還付と、翌年6月からの住民税の減額に分かれます。</p></details></div>
+
+  <div class="ch">
+    <img src="img/wink.png" alt="">
+    <div><h2>動画でもっとわかりやすく！</h2><p>はむたの資産形成塾では、お金に関係する悩みをショート動画でわかりやすく解説しています。</p><a href="https://www.youtube.com/@hamnoshisan?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTubeでチャンネル登録</a></div>
+  </div>
+
+  <footer>
+    <p class="pr"><b>PR</b>このページには楽天アフィリエイトのリンクが含まれます。</p>
+    <p>出典・注意</p>
+    <ul>
+      <li>ランキング・寄附額：楽天ふるさと納税「2026上半期ランキング」（集計：2025年11月1日〜2026年4月30日）。寄附額は「〜」の最低額の目安です。</li>
+      <li>2026年10月1日以降の寄附から、返礼品の基準が見直されています。寄附額・内容量・取り扱いは変わることがあるため、寄附の前に各返礼品ページで最新の内容を確認してください。</li>
+      <li>制度：総務省「ふるさと納税のしくみ」。返礼品の調達額は寄附額の3割以下・地場産品に限られます。</li>
+      <li>このページは情報提供を目的としたもので、特定の返礼品の品質を保証するものではありません。</li>
+    </ul>
+    <p>© はむたの資産形成塾</p>
+  </footer>
+</div>
+<script>
+const STD = [[58000, 63000], [68000, 73000], [78000, 83000], [88000, 93000], [98000, 101000], [104000, 107000], [110000, 114000], [118000, 122000], [126000, 130000], [134000, 138000], [142000, 146000], [150000, 155000], [160000, 165000], [170000, 175000], [180000, 185000], [190000, 195000], [200000, 210000], [220000, 230000], [240000, 250000], [260000, 270000], [280000, 290000], [300000, 310000], [320000, 330000], [340000, 350000], [360000, 370000], [380000, 395000], [410000, 425000], [440000, 455000], [470000, 485000], [500000, 515000], [530000, 545000], [560000, 575000], [590000, 605000], [620000, 635000], [650000, 665000], [680000, 695000], [710000, 730000], [750000, 770000], [790000, 810000], [830000, 855000], [880000, 905000], [930000, 955000], [980000, 1005000], [1030000, 1055000], [1090000, 1115000], [1150000, 1175000], [1210000, 1235000], [1270000, 1295000], [1330000, 1355000], [1390000, 1000000000]];
+function stdM(m){for(const [s,u] of STD){if(m<u)return s;}return STD[STD.length-1][0];}
+function kyuyoKojo(x){if(x<=1900000)return 740000;if(x<=3600000)return x*0.3+80000;if(x<=6600000)return x*0.2+440000;if(x<=8500000)return x*0.1+1100000;return 1950000;}
+function kyuyoKojoR(x){if(x<=1625000)return 550000;if(x<=1800000)return x*0.4-100000;if(x<=3600000)return x*0.3+80000;if(x<=6600000)return x*0.2+440000;if(x<=8500000)return x*0.1+1100000;return 1950000;}
+function kiso(g){if(g<=4890000)return 1040000;if(g<=6550000)return 670000;if(g<=23500000)return 620000;return 0;}
+const RATES=[[1950000,.05],[3300000,.10],[6950000,.20],[9000000,.23],[18000000,.33],[40000000,.40],[1e13,.45]];
+function simulate(o){
+  const a=o.income, m=a/12;
+  const health=Math.round(stdM(m)*(0.0985+0.0023)/2)*12, pension=Math.round(Math.min(stdM(m),650000)*0.183/2)*12, employ=Math.round(a*0.005);
+  let social=health+pension+employ; const ideco=o.ideco*12;
+  let kyuyo=Math.max(0,a-kyuyoKojo(a)), kyuyoR=Math.max(0,a-kyuyoKojoR(a));
+  if(o.self){ kyuyo=kyuyoR=Math.max(0,o.shotoku); social=o.social; }
+  // 配偶者控除（本人の合計所得で段階的に減る）
+  let spI=0,spR=0;
+  if(o.spouse){ if(kyuyo<=9000000){spI=380000;spR=330000;} else if(kyuyo<=9500000){spI=260000;spR=220000;} else if(kyuyo<=10000000){spI=130000;spR=110000;} }
+  const depI=o.kids1618*380000+o.kids1922*630000, depR=o.kids1618*330000+o.kids1922*450000;
+  const taxable=Math.max(0,kyuyo-social-ideco-kiso(kyuyo)-spI-depI);
+  const r=taxable<=0?0:RATES.find(([l])=>taxable<=l)[1];
+  const tr=Math.max(0,Math.floor((kyuyoR-social-ideco-430000-spR-depR)/1000)*1000);
+  const jinteki=50000+(spR?50000:0)+o.kids1618*50000+o.kids1922*180000;
+  const adj = tr<=2000000 ? Math.min(jinteki,tr)*0.05 : Math.max(jinteki-(tr-2000000),50000)*0.05;
+  const wari=Math.max(0,tr*0.10-adj);
+  const limit = wari<=0 ? 0 : wari*0.2/(0.9-r*1.021)+2000;
+  return {limit:Math.round(limit/1000)*1000, rate:r, wari};
+}
+
+(function(){
+  const $=id=>document.getElementById(id);
+  let self=false;
+  function setMode(v){self=v;$('m-emp').setAttribute('aria-pressed',!v);$('m-self').setAttribute('aria-pressed',v);
+    document.querySelectorAll('.f.emp').forEach(x=>x.hidden=v);document.querySelectorAll('.f.self').forEach(x=>x.hidden=!v);
+    document.querySelectorAll('.n-emp').forEach(x=>x.hidden=v);document.querySelectorAll('.n-self').forEach(x=>x.hidden=!v);
+    document.documentElement.dataset.work=v?'self':'emp';run();document.dispatchEvent(new Event('simchange'));}
+  $('m-emp').addEventListener('click',()=>setMode(false));$('m-self').addEventListener('click',()=>setMode(true));
+  function run(){
+    const inc=Math.max(0,Math.min(50000000,(parseFloat($('inc').value)||0)*10000));
+    const biz=Math.max(0,Math.min(50000000,(parseFloat($('biz').value)||0)*10000));
+    const nenkin=17920*12;
+    const kv=parseFloat($('kok').value);
+    const kok=isNaN(kv)?Math.min(Math.max(0,biz-430000)*0.11+65000,1090000):kv;
+    const res=simulate({income:inc,self:self,shotoku:biz,social:Math.round(kok+nenkin),spouse:$('fam').value==='1',kids1618:+$('k1').value,kids1922:+$('k2').value,ideco:Math.max(0,parseFloat($('ide').value)||0)});
+    if((!self&&inc<1000000)||res.limit<=2000){$('rv').textContent='ほぼ0円';$('rg').textContent='—';return;}
+    $('rv').textContent='約'+res.limit.toLocaleString('ja-JP')+'円';
+    $('rg').textContent='約'+Math.floor(res.limit*0.3).toLocaleString('ja-JP')+'円分';
+  }
+  $('sim').addEventListener('input',run); run();
+})();
+</script>
+<script>
+window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
+  const all=()=>{try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){return mem}};
+  const save=o=>{mem=o;try{localStorage.setItem(K,JSON.stringify(o))}catch(e){}};
+  return {get:id=>Math.max(1,+(all()[id]||1)),
+    set:(id,n)=>{const o=all();o[id]=Math.max(1,Math.min(9,n));save(o);document.dispatchEvent(new Event('favchange'));},
+    reset:o=>save(o||{}), all};})();
+</script>
+<script>
+(function(){
+  const KEY='hamuta_furusato_fav';
+  let fav=[];try{fav=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(fav))}catch(e){}};
+  const items=[...document.querySelectorAll('article.item')];
+  const q=document.getElementById('q'), only=document.getElementById('favonly');
+  function limitNow(){const t=(document.getElementById('rv')||{}).textContent||'';const n=parseInt(t.replace(/[^0-9]/g,''),10);return isNaN(n)?0:n;}
+  function render(){
+    const w=(q.value||'').trim().toLowerCase().replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96)).split(/\s+/).filter(Boolean);
+    const fo=only.getAttribute('aria-pressed')==='true';
+    let shown=0;
+    items.forEach(a=>{
+      const on=fav.includes(a.dataset.id);
+      const b=a.querySelector('.fav');b.setAttribute('aria-pressed',on);b.textContent=on?'★':'☆';
+      const hit=w.every(x=>a.dataset.q.includes(x)) && (!fo||on);
+      a.hidden=!hit; if(hit)shown++;
+    });
+    document.querySelectorAll('.catsec').forEach(s=>{s.hidden=![...s.querySelectorAll('article.item')].some(a=>!a.hidden)});
+    document.getElementById('none').hidden=shown>0;
+    const sel=items.filter(a=>fav.includes(a.dataset.id));
+    const cart=document.getElementById('cart');cart.hidden=sel.length===0;
+    const tot=sel.reduce((s,a)=>s+(+a.dataset.price)*FQ.get(a.dataset.id),0), lim=limitNow();
+    document.getElementById('cn').textContent=sel.length;
+    const ct=document.getElementById('ct');ct.textContent=tot.toLocaleString('ja-JP')+'円';
+    ct.className=lim&&tot>lim?'ov':'';
+    document.getElementById('cl').textContent=sel.map(a=>a.dataset.id).join('・')+(lim&&tot>lim?'　※限度額を超えています':'');
+  }
+  items.forEach(a=>a.querySelector('.fav').addEventListener('click',()=>{const id=a.dataset.id;fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];save();render();}));
+  q.addEventListener('input',render);
+  only.addEventListener('click',()=>{only.setAttribute('aria-pressed',only.getAttribute('aria-pressed')!=='true');render();});
+  const sim=document.getElementById('sim'); if(sim) sim.addEventListener('input',()=>setTimeout(render,0));
+  document.addEventListener('simchange',()=>setTimeout(render,0));
+  document.addEventListener('favchange',()=>{try{fav=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}render();});
+  render();
+})();
+</script>
+<script>
+(function(){
+  const KEY='hamuta_furusato_fav';
+  const yen=n=>n.toLocaleString('ja-JP')+'円';
+  function lim(){const t=(document.getElementById('rv')||{}).textContent||'';const n=parseInt(t.replace(/[^0-9]/g,''),10);return isNaN(n)?0:n;}
+  function draw(){
+    let fav=[];try{fav=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+    const items=[...document.querySelectorAll('article.item')].filter(a=>fav.includes(a.dataset.id));
+    const list=document.getElementById('combo-list');list.textContent='';
+    items.forEach(a=>{
+      const r=document.createElement('div');r.className='row';
+      const nm=document.createElement('div');nm.className='nm';nm.textContent=a.dataset.id;
+      const sm=document.createElement('small');sm.textContent=a.dataset.town;nm.appendChild(sm);
+      const rm=document.createElement('button');rm.type='button';rm.className='rm';rm.textContent='外す';
+      rm.addEventListener('click',()=>a.querySelector('.fav').click());nm.appendChild(rm);
+      const n=FQ.get(a.dataset.id);
+      const qw=document.createElement('div');qw.className='qty';
+      const mi=document.createElement('button');mi.type='button';mi.textContent='−';mi.setAttribute('aria-label','回数を減らす');mi.disabled=n<=1;
+      const qs=document.createElement('span');qs.textContent=n+'回';
+      const pl=document.createElement('button');pl.type='button';pl.textContent='+';pl.setAttribute('aria-label','回数を増やす');
+      mi.addEventListener('click',()=>{FQ.set(a.dataset.id,n-1);});pl.addEventListener('click',()=>{FQ.set(a.dataset.id,n+1);});
+      qw.append(mi,qs,pl);nm.appendChild(qw);
+      const pr=document.createElement('div');pr.className='pr2';pr.textContent=yen(+a.dataset.price*n)+'〜';
+      const bt=document.createElement('a');bt.className='buy';bt.href=a.dataset.url;bt.target='_blank';bt.rel='noopener sponsored nofollow';bt.textContent='楽天で見る ›';
+      r.append(nm,pr,bt);list.appendChild(r);
+    });
+    document.getElementById('combo-empty').hidden=items.length>0;
+    const tot=items.reduce((s,a)=>s+(+a.dataset.price)*FQ.get(a.dataset.id),0), L=lim();
+    document.getElementById('combo-total').textContent=yen(tot);
+    document.getElementById('combo-limit').textContent=L?'約'+yen(L):'—';
+    const m=document.getElementById('combo-msg');
+    if(!items.length||!L){m.textContent='';m.className='cmsg';}
+    else if(tot<=L){m.textContent='あと約'+yen(L-tot)+'選べます';m.className='cmsg ok';}
+    else{m.textContent='限度額を約'+yen(tot-L)+'超えています（超えた分は自己負担）';m.className='cmsg ng';}
+    const towns=new Set(items.map(a=>a.dataset.town)).size;
+    document.getElementById('combo-towns').textContent=towns;
+    const selfm=document.documentElement.dataset.work==='self';
+    document.getElementById('combo-os').textContent=selfm?'。個人事業主は確定申告でまとめて申告します':(towns<=5?'なので、ワンストップ特例が使えます':'なので、ワンストップ特例は使えません（確定申告が必要）');
+  }
+  document.addEventListener('click',e=>{if(e.target.closest('.fav'))setTimeout(draw,0)});
+  const sim=document.getElementById('sim');if(sim)sim.addEventListener('input',()=>setTimeout(draw,0));
+  document.addEventListener('simchange',()=>setTimeout(draw,0));
+  document.addEventListener('favchange',()=>setTimeout(draw,0));
+  draw();
+})();
+</script>
+<script>
+(function(){
+  const cols=[[false,0,0],[true,0,0],[true,1,0],[true,0,1],[true,1,1]];
+  const rows=[300,400,500,600,700,800,900,1000,1200,1500];
+  const tb=document.getElementById('qtb'); if(!tb) return;
+  rows.forEach(r=>{
+    const tr=document.createElement('tr');
+    const th=document.createElement('td');th.textContent=r.toLocaleString('ja-JP')+'万円';tr.appendChild(th);
+    cols.forEach(([sp,k1,k2])=>{
+      const v=simulate({income:r*10000,spouse:sp,kids1618:k1,kids1922:k2,ideco:0}).limit;
+      const td=document.createElement('td');td.className='num';td.textContent=v>2000?(v/10000).toFixed(1)+'万円':'—';tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+})();
+</script>
+<script>
+(function(){
+  const KEY='hamuta_furusato_fav', $=id=>document.getElementById(id);
+  const items=[...document.querySelectorAll('article.item')];
+  let mem=null; // localStorage が使えない時の控え
+  const get=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return mem||[]}};
+  const put=v=>{mem=v;try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){};document.dispatchEvent(new Event('favchange'));};
+  // 並び替え（各カテゴリ内）
+  const ORDER={rec:a=>(a.dataset.photo==='1'?0:1000)+(+a.dataset.rank),cheap:a=>+a.dataset.price,rank:a=>+a.dataset.rank};
+  function sort(){const f=ORDER[$('sort').value];document.querySelectorAll('.items').forEach(g=>{[...g.children].sort((x,y)=>f(x)-f(y)).forEach(c=>g.appendChild(c));});}
+  $('sort').addEventListener('change',sort);sort();
+  // おまかせ組み合わせ：おすすめ順に、限度額と5自治体の範囲で詰める
+  const PRI=['訳ありホタテ貝柱','コシヒカリ（品種おまかせも）','醤油漬けイクラ','宮崎牛 赤身＆霜降り（選べるカット）','厚切り塩銀鮭','シャインマスカット（選べる内容量）','さがびより'];
+  function lim(){const n=parseInt(($('rv').textContent||'').replace(/[^0-9]/g,''),10);return isNaN(n)?0:n;}
+  $('auto').addEventListener('click',()=>{
+    const L=lim(), prev=get(), pq=FQ.all();
+    if(!L){$('toast-t').textContent='まず限度額を計算してね';$('undo').hidden=true;$('toast').hidden=false;location.hash='mycombo';return;}
+    const by=Object.fromEntries(items.map(a=>[a.dataset.id,a]));
+    const pool=[...PRI,...items.filter(a=>a.dataset.photo==='1').map(a=>a.dataset.id).filter(x=>!PRI.includes(x))];
+    let tot=0;const towns=new Set(),pick=[];
+    for(const id of pool){const a=by[id];if(!a)continue;const p=+a.dataset.price,t=a.dataset.town;
+      if(tot+p>L)continue;if(!towns.has(t)&&towns.size>=5)continue;pick.push(id);tot+=p;towns.add(t);}
+    FQ.reset({});put(pick);
+    $('toast-t').textContent=pick.length?'限度額 約'+L.toLocaleString('ja-JP')+'円の中で '+pick.length+'品を選びました':'この限度額で選べる返礼品がありませんでした';
+    $('undo').hidden=!prev.length&&!pick.length;$('toast').hidden=false;$('undo').onclick=()=>{FQ.reset(pq);put(prev);$('toast').hidden=true;};
+    $('mycombo').scrollIntoView({behavior:'smooth'});
+  });
+  // メニューの保存件数と現在地
+  function badge(){if(!$('navn'))return;const n=get().filter(x=>items.some(a=>a.dataset.id===x)).length;$('navn').textContent=n;$('navn').hidden=!n;}
+  document.addEventListener('favchange',badge);document.addEventListener('click',e=>{if(e.target.closest('.fav'))setTimeout(badge,0)});badge();
+  const links=[...document.querySelectorAll('.topnav a')];
+  const secs=links.map(a=>document.getElementById(a.getAttribute('href').slice(1)));
+  function cur(){let k=0,bt=-1e9;secs.forEach((s,i)=>{if(!s)return;const t=s.getBoundingClientRect().top;if(t<120&&t>bt){bt=t;k=i;}});links.forEach((a,i)=>a.classList.toggle('cur',i===k));}
+  addEventListener('scroll',cur,{passive:true});cur();
+})();
+</script>
+<script>
+(function(){
+  const $=id=>document.getElementById(id), KEY='hamuta_furusato_fav';
+  // おすすめセットのタブ
+  const tabs=[...document.querySelectorAll('.stab')];
+  function show(id){tabs.forEach(b=>b.setAttribute('aria-pressed',b.dataset.set===id));document.querySelectorAll('.spanel').forEach(p=>p.hidden=p.id!=='set-'+id);}
+  tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.set)));
+  // 限度額に近い予算セットを最初に開く
+  function lim(){const n=parseInt(($('rv').textContent||'').replace(/[^0-9]/g,''),10);return isNaN(n)?0:n;}
+  function best(){const L=lim();const c=[['b3',30000],['b6',60000],['b10',100000]];let k='b3';c.forEach(([id,v])=>{if(L>=v*0.9)k=id;});return k;}
+  let touched=false;tabs.forEach(b=>b.addEventListener('click',()=>touched=true));
+  show(best());$('sim').addEventListener('input',()=>{if(!touched)show(best());});
+  // セットを「あなたの組み合わせ」に入れる
+  document.querySelectorAll('.suse').forEach(b=>b.addEventListener('click',()=>{
+    let prev=[];try{prev=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+    const pq=FQ.all(), list=JSON.parse(b.dataset.items), q={};
+    list.forEach(([n,c])=>q[n]=c);FQ.reset(q);
+    try{localStorage.setItem(KEY,JSON.stringify(list.map(x=>x[0])))}catch(e){}
+    document.dispatchEvent(new Event('favchange'));
+    $('toast-t').textContent=(b.dataset.title||b.closest('.spanel').querySelector('h3').textContent)+'を入れました';
+    $('undo').hidden=false;$('toast').hidden=false;
+    $('undo').onclick=()=>{FQ.reset(pq);try{localStorage.setItem(KEY,JSON.stringify(prev))}catch(e){}document.dispatchEvent(new Event('favchange'));$('toast').hidden=true;};
+    $('mycombo').scrollIntoView({behavior:'smooth'});
+  }));
+  // シェア：選んだ返礼品の一覧（金額は入れない）
+  const URL=(location.protocol.startsWith('http')&&!location.hostname.endsWith('claude.ai')&&!location.hostname.includes('claudeusercontent'))?location.href.split('#')[0]:'https://ham-shisan.github.io/ham-furusato/';
+  const short=n=>n.replace(/[（(].*$/,'').trim();
+  // X は日本語1文字=2として280まで。URLは23扱い
+  const wlen=t=>[...t].reduce((a,c)=>a+(c.charCodeAt(0)>0x2000?2:1),0);
+  function text(){
+    let fav=[];try{fav=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+    const names=[...document.querySelectorAll('article.item')].filter(a=>fav.includes(a.dataset.id)).map(a=>short(a.dataset.id));
+    const head=names.length?'今年のふるさと納税は、はむたのページでシミュレーションして、これを選びました！':'今年のふるさと納税は、はむたのページでシミュレーションして返礼品を選びます！';
+    const tail='\n#ふるさと納税 #はむたの資産形成塾';
+    let list=[],rest=names.length;
+    for(const n of names){const tryT=head+'\n'+[...list,'・'+n].join('\n')+(rest-1>0?'\nほか'+(rest-1)+'品':'')+tail;
+      if(wlen(tryT)+24>280)break;list.push('・'+n);rest--;}
+    return head+(list.length?'\n'+list.join('\n'):'')+(rest>0&&list.length?'\nほか'+rest+'品':'')+tail;
+  }
+  window.__hamShareText=()=>text();
+  function share(){const t=text();$('shprev').textContent=t;
+    $('shx').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(URL);
+    $('shl').href='https://line.me/R/share?text='+encodeURIComponent(t+'\n'+URL);}
+  document.addEventListener('favchange',()=>setTimeout(share,0));document.addEventListener('click',e=>{if(e.target.closest('.fav,.qty button,.rm'))setTimeout(share,0)});share();
+  $('shc').addEventListener('click',()=>{const t=text()+'\n'+URL;const done=()=>{$('shc').textContent='コピーしました';setTimeout(()=>$('shc').textContent='文章をコピー',1600);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,()=>{const r=document.createRange();r.selectNodeContents($('shprev'));const sel=getSelection();sel.removeAllRanges();sel.addRange(r);});}});
+})();
+</script>
+<script>
+(function(){
+  const box=document.getElementById('picklist'); if(!box) return;
+  const cards=[...box.children], dots=document.getElementById('pdots'), pv=document.getElementById('pprev'), nx=document.getElementById('pnext');
+  cards.forEach(()=>dots.appendChild(document.createElement('span')));
+  const step=()=>cards[1]?cards[1].offsetLeft-cards[0].offsetLeft:box.clientWidth;
+  function upd(){const i=Math.round(box.scrollLeft/step());[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===Math.min(i,cards.length-1)));
+    pv.disabled=box.scrollLeft<4;nx.disabled=box.scrollLeft+box.clientWidth>=box.scrollWidth-4;}
+  pv.addEventListener('click',()=>box.scrollBy({left:-step(),behavior:'smooth'}));
+  nx.addEventListener('click',()=>box.scrollBy({left:step(),behavior:'smooth'}));
+  box.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+<script>
+(function(){
+  const K='hamuta_furusato_view',r=document.documentElement,b3=document.getElementById('v3'),b2=document.getElementById('v2');
+  function set(v){r.classList.toggle('detail',v==='2');b3.setAttribute('aria-pressed',v!=='2');b2.setAttribute('aria-pressed',v==='2');try{localStorage.setItem(K,v)}catch(e){}}
+  let v='3';try{v=localStorage.getItem(K)||'3'}catch(e){}
+  set(v);b3.addEventListener('click',()=>set('3'));b2.addEventListener('click',()=>set('2'));
+})();
+</script>
+<script>
+(function(){document.querySelectorAll('.case .cl').forEach(d=>{const o=JSON.parse(d.dataset.sim);
+  const r=simulate({income:o.income,spouse:!!o.spouse,kids1618:o.k1,kids1922:o.k2,ideco:0});d.textContent='約'+r.limit.toLocaleString('ja-JP')+'円';});})();
+</script>
+<script>
+// シェア画像（1200×675）を作って保存する
+(function(){
+  const KEY='hamuta_furusato_fav', $=id=>document.getElementById(id);
+  const short=n=>n.replace(/[（(].*$/,'').trim();
+  function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+  function fit(c,t,max){if(c.measureText(t).width<=max)return t;while(t.length>1&&c.measureText(t+'…').width>max)t=t.slice(0,-1);return t+'…';}
+  const load=src=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});
+  async function draw(){
+    let fav=[];try{fav=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+    const its=[...document.querySelectorAll('article.item')].filter(a=>fav.includes(a.dataset.id));
+    const W=1200,H=675,cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');
+    const F='"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Zen Kaku Gothic New",sans-serif';
+    c.fillStyle='#f3f8ee';c.fillRect(0,0,W,H);
+    c.fillStyle='#2ea05a';c.fillRect(0,0,W,14);c.fillRect(0,H-14,W,14);
+    c.fillStyle='#1f2a37';c.font='800 54px '+F;c.textBaseline='top';
+    c.fillText(its.length?'今年のふるさと納税はこれ！':'ふるさと納税、どれにする？',56,46);
+    c.fillStyle='#5b6676';c.font='700 26px '+F;
+    c.fillText(its.length?'はむたのページで限度額をシミュレーションして選びました':'限度額シミュレーター＆はむたの超おすすめ返礼品',58,116);
+    const ham=await load((document.querySelector('header img')||{}).src);
+    if(its.length){
+      const show=its.length>6?its.slice(0,5):its, cols=3, cw=248, chh=212, gx=24, x0=56, y0=176;
+      for(let k=0;k<show.length;k++){
+        const a=show[k], x=x0+(k%cols)*(cw+gx), y=y0+Math.floor(k/cols)*(chh+22);
+        c.save();c.shadowColor='rgba(0,0,0,.12)';c.shadowBlur=12;c.fillStyle='#fff';rr(c,x,y,cw,chh,18);c.fill();c.restore();
+        const im=a.querySelector('.ph img'); const pic=im?await load(im.src):null;
+        c.save();rr(c,x,y,cw,158,18);c.clip();
+        if(pic){const s=Math.max(cw/pic.width,158/pic.height),w=pic.width*s,h=pic.height*s;c.drawImage(pic,x+(cw-w)/2,y+(158-h)/2,w,h);}
+        else{c.fillStyle='#eef2ea';c.fillRect(x,y,cw,158);}
+        c.restore();
+        c.fillStyle='#1f2a37';c.font='800 22px '+F;c.fillText(fit(c,short(a.dataset.id),cw-24),x+12,y+168);
+      }
+      if(its.length>6){const x=x0+2*(cw+gx),y=y0+chh+22;c.fillStyle='#fff0e2';rr(c,x,y,cw,chh,18);c.fill();c.fillStyle='#f07c22';c.font='800 44px '+F;c.textAlign='center';c.fillText('ほか'+(its.length-5)+'品',x+cw/2,y+80);c.textAlign='left';}
+    }else{
+      c.fillStyle='#fff';rr(c,56,190,740,380,24);c.fill();
+      c.fillStyle='#2ea05a';c.font='800 40px '+F;c.fillText('🧮 年収を入れて限度額を計算',90,240);
+      c.fillStyle='#f07c22';c.fillText('🎁 50品以上から返礼品を選ぶ',90,320);
+      c.fillStyle='#1f2a37';c.fillText('🧺 目的別のおすすめセットも',90,400);
+    }
+    if(ham){const hw=300,hh=ham.height*hw/ham.width;c.drawImage(ham,W-hw-40,H-hh-90,hw,hh);}
+    c.fillStyle='#2ea05a';rr(c,W-372,H-84,332,52,26);c.fill();
+    c.fillStyle='#fff';c.font='800 24px '+F;c.textAlign='center';c.fillText('はむたの資産形成塾',W-206,H-71);c.textAlign='left';
+    return new Promise(r=>cv.toBlob(r,'image/png'));
+  }
+  const btn=$('shimg'), msg=$('shmsg');
+  (async()=>{
+    const d=window.claude&&window.claude.use?await window.claude.use('downloads'):null;
+    if(!d){ if(window.claude) return;  // claude.ai の中で保存できない表示
+      btn.hidden=false;
+      btn.addEventListener('click',async()=>{
+        btn.disabled=true;
+        try{await (document.fonts&&document.fonts.ready);const blob=await draw();
+          const file=new File([blob],'hamuta_furusato.png',{type:'image/png'});
+          const t=(window.__hamShareText?window.__hamShareText():'');
+          if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],text:t+'\n'+location.href.split('#')[0]});}
+          else{const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='hamuta_furusato.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);
+            msg.textContent='画像を保存しました。ポストに添付してね';msg.hidden=false;}
+        }catch(e){}finally{btn.disabled=false;}
+      });
+      return; }
+    btn.hidden=false;
+    btn.addEventListener('click',async()=>{
+      btn.disabled=true;msg.hidden=true;
+      try{await (document.fonts&&document.fonts.ready);const blob=await draw();
+        await d.save({filename:'hamuta_furusato_share.png',data:blob});
+        msg.textContent='保存しました。ポストに画像を添付してね';msg.hidden=false;}
+      catch(e){const code=e&&e.code;if(code==='unavailable'||code==='not_granted'||code==='capability_disabled'||code==='capability_removed')btn.hidden=true;}
+      finally{btn.disabled=false;}
+    });
+  })();
+  window.__hamDrawShare=draw; // 動作確認用
+})();
+</script>
+</body></html>

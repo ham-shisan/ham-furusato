@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ham-shisan.github.io/ham-furusato/sitemap.xml
