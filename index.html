@@ -634,7 +634,10 @@ window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
     $('mycombo').scrollIntoView({behavior:'smooth'});
   }));
   // シェア：選んだ返礼品の一覧（金額は入れない）
-  const URL=(location.protocol.startsWith('http')&&!location.hostname.endsWith('claude.ai')&&!location.hostname.includes('claudeusercontent'))?location.href.split('#')[0]:'https://ham-shisan.github.io/ham-furusato/';
+  const BASE=(location.protocol.startsWith('http')&&!location.hostname.endsWith('claude.ai')&&!location.hostname.includes('claudeusercontent'))?location.origin+location.pathname.replace(/[^/]*$/,''):'https://ham-shisan.github.io/ham-furusato/';
+  // シェア用の入口URL：画像A/B/Cをランダムに（どの画像・どのSNSから来たかをGA4で比べる）
+  const entry=m=>BASE+'s/'+['a','b','c'][Math.floor(Math.random()*3)]+'/?m='+m;
+  const URL=BASE;
   const short=n=>n.replace(/[（(].*$/,'').trim();
   // X は日本語1文字=2として280まで。URLは23扱い
   const wlen=t=>[...t].reduce((a,c)=>a+(c.charCodeAt(0)>0x2000?2:1),0);
@@ -649,11 +652,12 @@ window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
     return head+(list.length?'\n'+list.join('\n'):'')+(rest>0&&list.length?'\nほか'+rest+'品':'')+tail;
   }
   window.__hamShareText=()=>text();
+  ['shx','shl'].forEach(id=>{const el=document.getElementById(id);if(el){el.addEventListener('pointerdown',()=>share());el.addEventListener('focus',()=>share());}});
   function share(){const t=text();$('shprev').textContent=t;
-    $('shx').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(URL);
-    $('shl').href='https://line.me/R/share?text='+encodeURIComponent(t+'\n'+URL);}
+    $('shx').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(entry('x'));
+    $('shl').href='https://line.me/R/share?text='+encodeURIComponent(t+'\n'+entry('line'));}
   document.addEventListener('favchange',()=>setTimeout(share,0));document.addEventListener('click',e=>{if(e.target.closest('.fav,.qty button,.rm'))setTimeout(share,0)});share();
-  $('shc').addEventListener('click',()=>{const t=text()+'\n'+URL;const done=()=>{$('shc').textContent='コピーしました';setTimeout(()=>$('shc').textContent='文章をコピー',1600);};
+  $('shc').addEventListener('click',()=>{const t=text()+'\n'+entry('copy');const done=()=>{$('shc').textContent='コピーしました';setTimeout(()=>$('shc').textContent='文章をコピー',1600);};
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,()=>{const r=document.createRange();r.selectNodeContents($('shprev'));const sel=getSelection();sel.removeAllRanges();sel.addRange(r);});}});
 })();
 </script>
@@ -690,40 +694,65 @@ window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
   function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
   function fit(c,t,max){if(c.measureText(t).width<=max)return t;while(t.length>1&&c.measureText(t+'…').width>max)t=t.slice(0,-1);return t+'…';}
   const load=src=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});
-  async function draw(){
+  // 3デザイン（a:黄色 b:緑 c:写真コラージュ）からランダム
+  async function draw(v){
+    v=v||['a','b','c'][Math.floor(Math.random()*3)];
     let fav=[];try{fav=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
     const its=[...document.querySelectorAll('article.item')].filter(a=>fav.includes(a.dataset.id));
+    const pics=its.length?its.map(a=>({n:short(a.dataset.id),src:(a.querySelector('.ph img')||{}).src})):[...document.querySelectorAll('.pick')].map(p=>({n:short(p.querySelector('h3').textContent),src:p.querySelector('img').src}));
     const W=1200,H=675,cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');
     const F='"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Zen Kaku Gothic New",sans-serif';
-    c.fillStyle='#f3f8ee';c.fillRect(0,0,W,H);
-    c.fillStyle='#2ea05a';c.fillRect(0,0,W,14);c.fillRect(0,H-14,W,14);
-    c.fillStyle='#1f2a37';c.font='800 54px '+F;c.textBaseline='top';
-    c.fillText(its.length?'今年のふるさと納税はこれ！':'ふるさと納税、どれにする？',56,46);
-    c.fillStyle='#5b6676';c.font='700 26px '+F;
-    c.fillText(its.length?'はむたのページで限度額をシミュレーションして選びました':'限度額シミュレーター＆はむたの超おすすめ返礼品',58,116);
-    const ham=await load((document.querySelector('header img')||{}).src);
-    if(its.length){
-      const show=its.length>6?its.slice(0,5):its, cols=3, cw=248, chh=212, gx=24, x0=56, y0=176;
-      for(let k=0;k<show.length;k++){
-        const a=show[k], x=x0+(k%cols)*(cw+gx), y=y0+Math.floor(k/cols)*(chh+22);
-        c.save();c.shadowColor='rgba(0,0,0,.12)';c.shadowBlur=12;c.fillStyle='#fff';rr(c,x,y,cw,chh,18);c.fill();c.restore();
-        const im=a.querySelector('.ph img'); const pic=im?await load(im.src):null;
-        c.save();rr(c,x,y,cw,158,18);c.clip();
-        if(pic){const s=Math.max(cw/pic.width,158/pic.height),w=pic.width*s,h=pic.height*s;c.drawImage(pic,x+(cw-w)/2,y+(158-h)/2,w,h);}
-        else{c.fillStyle='#eef2ea';c.fillRect(x,y,cw,158);}
-        c.restore();
-        c.fillStyle='#1f2a37';c.font='800 22px '+F;c.fillText(fit(c,short(a.dataset.id),cw-24),x+12,y+168);
-      }
-      if(its.length>6){const x=x0+2*(cw+gx),y=y0+chh+22;c.fillStyle='#fff0e2';rr(c,x,y,cw,chh,18);c.fill();c.fillStyle='#f07c22';c.font='800 44px '+F;c.textAlign='center';c.fillText('ほか'+(its.length-5)+'品',x+cw/2,y+80);c.textAlign='left';}
-    }else{
-      c.fillStyle='#fff';rr(c,56,190,740,380,24);c.fill();
-      c.fillStyle='#2ea05a';c.font='800 40px '+F;c.fillText('🧮 年収を入れて限度額を計算',90,240);
-      c.fillStyle='#f07c22';c.fillText('🎁 50品以上から返礼品を選ぶ',90,320);
-      c.fillStyle='#1f2a37';c.fillText('🧺 目的別のおすすめセットも',90,400);
+    c.textBaseline='top';
+    const ham=await load((document.querySelector('header img')||{}).src), wink=await load((document.querySelector('.ch img')||{}).src);
+    const imgs=await Promise.all(pics.map(p=>p.src?load(p.src):null));
+    const cover=(im,x,y,w,h)=>{if(!im)return;const s=Math.max(w/im.width,h/im.height),iw=im.width*s,ih=im.height*s;c.drawImage(im,x+(w-iw)/2,y+(h-ih)/2,iw,ih);};
+    const pill=(t,x,y,bg,fg,fs,pad)=>{c.font='800 '+fs+'px '+F;const w=c.measureText(t).width+pad*2,h=fs+pad*1.2;c.fillStyle=bg;rr(c,x,y,w,h,h/2);c.fill();c.fillStyle=fg;c.fillText(t,x+pad,y+pad*0.6);return w;};
+    const head=its.length?'今年のふるさと納税はこれ！':'ふるさと納税、どれにする？';
+    const cnt=its.length?its.length+'品えらびました':'返礼品50品以上';
+    function tiles(x0,y0,cols,cw,ch,gx,label){
+      const n=Math.min(pics.length,cols*2), more=pics.length>cols*2;
+      for(let k=0;k<n;k++){const x=x0+(k%cols)*(cw+gx),y=y0+Math.floor(k/cols)*(ch+gx);
+        c.save();c.shadowColor='rgba(0,0,0,.18)';c.shadowBlur=14;c.fillStyle='#fff';rr(c,x,y,cw,ch,18);c.fill();c.restore();
+        const ph=label?ch-46:ch;c.save();rr(c,x,y,cw,ph,18);c.clip();cover(imgs[k],x,y,cw,ph);c.restore();
+        if(label){c.fillStyle='#1f2a37';c.font='800 21px '+F;c.fillText(fit(c,pics[k].n,cw-20),x+10,y+ph+11);}
+        if(more&&k===n-1){c.fillStyle='rgba(0,0,0,.6)';rr(c,x,y,cw,ch,18);c.fill();c.fillStyle='#fff';c.font='800 40px '+F;c.textAlign='center';c.fillText('ほか'+(pics.length-n+1)+'品',x+cw/2,y+ch/2-22);c.textAlign='left';}
+      }}
+    if(v==='a'){ // 黄色×赤 お得感
+      c.fillStyle='#ffd23f';c.fillRect(0,0,W,H);
+      c.save();c.translate(260,140);c.fillStyle='#ffdf6b';for(let k=0;k<18;k++){c.beginPath();c.moveTo(0,0);c.arc(0,0,1400,k*Math.PI/9,k*Math.PI/9+Math.PI/18);c.closePath();c.fill();}c.restore();
+      c.save();c.translate(52,40);c.rotate(-0.03);pill('私の今年のふるさと納税',0,0,'#e63946','#fff',32,18);c.restore();
+      c.fillStyle='#1d1d1d';c.font='900 64px '+F;c.fillText(its.length?'これにしました！':'どれにする？',56,104);
+      tiles(56,196,3,236,200,18,true);
+      c.fillStyle='#fff';c.strokeStyle='#1d1d1d';c.lineWidth=5;rr(c,830,60,330,170,24);c.fill();c.stroke();
+      c.fillStyle='#1d1d1d';c.font='800 26px '+F;c.fillText('自己負担は',856,82);
+      c.fillStyle='#e63946';c.font='900 54px '+F;c.fillText('実質2,000円',852,116);
+      c.fillStyle='#1d1d1d';c.font='800 24px '+F;c.fillText(cnt,856,184);
+      if(ham){const hw=300,hh=ham.height*hw/ham.width;c.drawImage(ham,W-hw-30,H-hh-60,hw,hh);}
+      pill('はむたの資産形成塾',W-300,H-62,'#1d1d1d','#ffd23f',24,14);
+    }else if(v==='b'){ // 緑 シミュレーター
+      const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#0f5132');g.addColorStop(1,'#2ea05a');c.fillStyle=g;c.fillRect(0,0,W,H);
+      c.fillStyle='#ffd23f';c.font='900 30px '+F;c.fillText('ふるさと納税 限度額シミュレーターで選んだ',56,36);
+      c.fillStyle='#fff';c.font='900 62px '+F;c.fillText(head,56,76);
+      c.fillStyle='rgba(255,255,255,.96)';rr(c,40,170,780,470,28);c.fill();
+      tiles(64,194,3,236,204,18,true);
+      pill('自己負担は実質2,000円',848,190,'#ffd23f','#1f2a37',25,14);
+      pill(cnt,852,256,'rgba(0,0,0,.25)','#fff',26,16);
+      if(ham){const hw=300,hh=ham.height*hw/ham.width;c.drawImage(ham,W-hw-30,H-hh-70,hw,hh);}
+      c.fillStyle='#fff';c.font='900 24px '+F;c.fillText('はむたの資産形成塾',W-260,H-50);
+    }else{ // 写真コラージュ
+      c.fillStyle='#111';c.fillRect(0,0,W,H);
+      const n=Math.max(1,pics.length),cols=n<=2?2:n<=6?3:4,rows=2,cw=W/cols,ch=H/rows;
+      for(let k=0;k<cols*rows;k++)cover(imgs[k%n],(k%cols)*cw,Math.floor(k/cols)*ch,cw+1,ch+1);
+      c.fillStyle='rgba(0,0,0,.25)';c.fillRect(0,0,W,H);
+      c.save();c.shadowColor='rgba(0,0,0,.4)';c.shadowBlur=40;c.fillStyle='rgba(255,255,255,.96)';rr(c,170,150,860,360,32);c.fill();c.restore();
+      c.textAlign='center';
+      c.fillStyle='#2ea05a';c.font='900 30px '+F;c.fillText('私の今年のふるさと納税',600,186);
+      c.fillStyle='#1f2a37';{const t=its.length?cnt+'！':'ふるさと納税、どれにする？';let fs=66;c.font='900 '+fs+'px '+F;while(c.measureText(t).width>800&&fs>30){fs-=2;c.font='900 '+fs+'px '+F;}c.fillText(t,600,240+(66-fs)/2);}
+      c.font='900 46px '+F;c.fillStyle='#1f2a37';const t1='自己負担は ',t2='実質2,000円';c.textAlign='left';
+      const w1=c.measureText(t1).width,w2=c.measureText(t2).width,x1=600-(w1+w2)/2;c.fillText(t1,x1,336);c.fillStyle='#e63946';c.fillText(t2,x1+w1,336);
+      c.textAlign='center';c.fillStyle='#f07c22';c.font='800 28px '+F;c.fillText('限度額シミュレーター＆おすすめ返礼品｜はむたの資産形成塾',600,420);c.textAlign='left';
+      const hm=wink||ham;if(hm){const hw=230,hh=hm.height*hw/hm.width;c.drawImage(hm,W-hw-20,H-hh-6,hw,hh);}
     }
-    if(ham){const hw=300,hh=ham.height*hw/ham.width;c.drawImage(ham,W-hw-40,H-hh-90,hw,hh);}
-    c.fillStyle='#2ea05a';rr(c,W-372,H-84,332,52,26);c.fill();
-    c.fillStyle='#fff';c.font='800 24px '+F;c.textAlign='center';c.fillText('はむたの資産形成塾',W-206,H-71);c.textAlign='left';
     return new Promise(r=>cv.toBlob(r,'image/png'));
   }
   const btn=$('shimg'), msg=$('shmsg');
@@ -736,7 +765,7 @@ window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
         try{await (document.fonts&&document.fonts.ready);const blob=await draw();
           const file=new File([blob],'hamuta_furusato.png',{type:'image/png'});
           const t=(window.__hamShareText?window.__hamShareText():'');
-          if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],text:t+'\n'+location.href.split('#')[0]});}
+          if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],text:t+'\n'+location.origin+location.pathname+'s/'+['a','b','c'][Math.floor(Math.random()*3)]+'/?m=image'});}
           else{const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='hamuta_furusato.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);
             msg.textContent='画像を保存しました。ポストに添付してね';msg.hidden=false;}
         }catch(e){}finally{btn.disabled=false;}
