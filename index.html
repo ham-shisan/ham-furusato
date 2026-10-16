@@ -282,6 +282,26 @@ h2 .ico{font-size:24px;line-height:1;flex:none}
 .guide h3{margin:0 0 4px;font-family:"M PLUS Rounded 1c",sans-serif;font-size:16.5px}
 .guide p{margin:0;font-size:14.5px;line-height:1.8}
 .flinks a{color:var(--sub)}
+
+/* ---- v31：最初の画面の簡単計算 ---- */
+.qc{margin-top:16px;background:var(--paper);border:2px solid var(--orange);border-radius:20px;padding:14px 16px;box-shadow:var(--shadow)}
+.qct{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:19px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.qct small{font-size:13px;color:var(--sub);font-weight:700}
+.qcf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:10px;margin-top:8px}
+.qci{display:flex;flex-direction:column;gap:2px;font-size:12.5px;color:var(--sub);min-width:0}
+.qci input,.qci select{font:inherit;font-size:18px;font-weight:700;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:7px 10px;width:100%;min-width:0}
+.qci select{font-size:15px;padding:9px 8px}
+.qcr{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:10px;background:var(--orange-soft);border-radius:12px;padding:6px 14px;flex-wrap:wrap}
+.qcl{font-size:14px;color:var(--sub);font-weight:700}
+.qcr b{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(30px,9vw,40px);color:var(--orange);font-variant-numeric:tabular-nums;line-height:1.25}
+.qca{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.qca a{flex:1 1 auto;text-align:center;text-decoration:none;font-weight:800;font-size:14px;border-radius:999px;padding:9px 12px;white-space:nowrap}
+.qca .p1{background:var(--red);color:#fff;flex-basis:100%}
+.qca .p2{background:var(--green-soft);color:var(--green)}
+.qca .p3{background:var(--chip);color:var(--ink)}
+.qcn{margin:8px 0 0;font-size:11.5px;color:var(--sub)}
+@media (max-width:620px){header{margin-top:12px}header img{width:72px}h1{font-size:22px;margin:2px 0 0}.lead{display:none}.kicker{font-size:12.5px}.qc{margin-top:12px}}
+@media (min-width:621px){.qca .p1{flex-basis:auto}}
 </style></head><body>
 
 <nav class="topnav" aria-label="ページ内メニュー"><ol><li><a href="#s1"><i aria-hidden="true">🧮</i><span>限度額の<wbr>計算</span></a></li><li><a href="#s3"><i aria-hidden="true">🔍</i><span>返礼品を<wbr>選ぶ・探す</span></a></li><li><a href="#s2"><i aria-hidden="true">🧺</i><span>おすすめの<wbr>組み合わせ</span></a></li><li><a href="#faq"><i aria-hidden="true">❓</i><span>よくある<wbr>質問</span></a></li></ol></nav>
@@ -296,6 +316,17 @@ h2 .ico{font-size:24px;line-height:1;flex:none}
     <img src="img/ham.png" alt="はむた">
   </header>
 
+
+  <div class="qc" id="qc">
+    <div class="qct">🧮 あなたの限度額は？<small>年収を入れるだけ</small></div>
+    <div class="qcf">
+      <label class="qci"><span>年収（税込）</span><span class="yen"><input id="qinc" type="number" inputmode="numeric" min="100" max="5000" step="10" value="500" aria-label="年収（万円）"><em>万円</em></span></label>
+      <label class="qci"><span>家族</span><select id="qfam" aria-label="家族"><option value="0">独身・共働き</option><option value="1">夫婦（配偶者の年収が少ない）</option></select></label>
+    </div>
+    <div class="qcr"><span class="qcl">限度額の目安</span><b id="qrv">約58,000円</b></div>
+    <div class="qca"><a class="p1" href="#s3">返礼品を選ぶ ↓</a><a class="p2" href="#s2">おすすめの組み合わせ</a><a class="p3" href="#s1">くわしく計算</a></div>
+    <p class="qcn">※会社員・ボーナスなしの目安。子ども・iDeCo・個人事業主は「くわしく計算」で。</p>
+  </div>
 
   <div class="picks-top"><h2 class="picks-h" id="picks">迷ったらこの5つ！はむたのイチオシ <small>横にスライドして見てね →</small></h2>
     <div class="parr"><button type="button" id="pprev" aria-label="前へ">‹</button><button type="button" id="pnext" aria-label="次へ">›</button></div></div>
@@ -804,6 +835,24 @@ window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
     T('simulate',{income_band:inc<400?'~399':inc<600?'400-599':inc<800?'600-799':inc<1000?'800-999':'1000+',mode:document.documentElement.dataset.work||'emp'});
     if(!done){done=true;T('simulate_first');}},1500);});
   const q=document.getElementById('q');if(q)q.addEventListener('change',()=>{if(q.value.trim())T('search',{search_term:q.value.trim()});});
+})();
+</script>
+<script>
+// 最初の画面の簡単計算（下のシミュレーターと連動）
+(function(){
+  const $=id=>document.getElementById(id), qi=$('qinc'), qf=$('qfam');
+  if(!qi||!$('inc'))return;
+  function show(){const v=$('rv').textContent;$('qrv').textContent=v;}
+  function push(){ // 簡単計算 → 本体
+    if(document.documentElement.dataset.work==='self'){const b=$('m-emp');if(b)b.click();}
+    $('inc').value=qi.value;$('fam').value=qf.value;
+    $('sim').dispatchEvent(new Event('input',{bubbles:true}));setTimeout(show,0);
+  }
+  qi.addEventListener('input',push);qf.addEventListener('change',push);
+  // 本体 → 簡単計算
+  $('sim').addEventListener('input',e=>{if(e.isTrusted){qi.value=$('inc').value;qf.value=$('fam').value;}setTimeout(show,0);});
+  document.addEventListener('simchange',()=>setTimeout(show,0));
+  show();
 })();
 </script>
 </body></html>
