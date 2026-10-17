@@ -303,6 +303,17 @@ h2 .ico{font-size:24px;line-height:1;flex:none}
 @media (max-width:620px){header{margin-top:12px}header img{width:72px}h1{font-size:22px;margin:2px 0 0}.lead{display:none}.kicker{font-size:12.5px}.qc{margin-top:12px}}
 @media (min-width:621px){.qca .p1{flex-basis:auto}}
 .chb{display:flex;gap:8px;flex-wrap:wrap}.ch a.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);color:#fff}
+
+.qvid{display:block;text-align:center;margin-top:8px;font-size:13.5px;font-weight:800;color:#e62117;text-decoration:none}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vid{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow)}
+.vth{position:relative;display:block;aspect-ratio:16/9;background:var(--chip)}
+.vth img{width:100%;height:100%;object-fit:cover;display:block}
+.vth b{position:absolute;left:10px;bottom:10px;width:56px;height:40px;border-radius:14px;background:#e62117;color:#fff;display:grid;place-items:center;font-size:22px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.vtx{padding:10px 12px 12px;display:flex;flex-direction:column;gap:2px}
+.vtx strong{font-family:"M PLUS Rounded 1c",sans-serif;font-size:16px}
+.vtx small{font-size:12.5px;color:var(--sub);line-height:1.5}
+@media (max-width:620px){.vids{grid-template-columns:none}.vid{flex-direction:row;align-items:center}.vth{width:44%;flex:none}.vth b{width:36px;height:26px;font-size:13px;border-radius:8px;left:6px;bottom:6px}}
 </style></head><body>
 
 <nav class="topnav" aria-label="ページ内メニュー"><ol><li><a href="#s1"><i aria-hidden="true">🧮</i><span>限度額の<wbr>計算</span></a></li><li><a href="#s3"><i aria-hidden="true">🔍</i><span>返礼品を<wbr>選ぶ・探す</span></a></li><li><a href="#s2"><i aria-hidden="true">🧺</i><span>おすすめの<wbr>組み合わせ</span></a></li><li><a href="#faq"><i aria-hidden="true">❓</i><span>よくある<wbr>質問</span></a></li></ol></nav>
@@ -327,6 +338,7 @@ h2 .ico{font-size:24px;line-height:1;flex:none}
     <div class="qcr"><span class="qcl">限度額の目安</span><b id="qrv">約58,000円</b></div>
     <div class="qca"><a class="p1" href="#s3">返礼品を選ぶ ↓</a><a class="p2" href="#s2">おすすめの組み合わせ</a><a class="p3" href="#s1">くわしく計算</a></div>
     <p class="qcn">※会社員・ボーナスなしの目安。子ども・iDeCo・個人事業主は「くわしく計算」で。</p>
+    <a class="qvid" href="https://www.youtube.com/@hamnoshisan/videos" target="_blank" rel="noopener">▶ 使い方を動画で見る（YouTube）</a>
   </div>
 
   <div class="picks-top"><h2 class="picks-h" id="picks">迷ったらこの5つ！はむたのイチオシ <small>横にスライドして見てね →</small></h2>
@@ -417,6 +429,12 @@ h2 .ico{font-size:24px;line-height:1;flex:none}
       <div class="share"><a class="sx" id="shx" href="#" target="_blank" rel="noopener">𝕏 ポスト</a><a class="sl" id="shl" href="#" target="_blank" rel="noopener">LINEで送る</a><button type="button" id="shimg" class="si" hidden>🖼 シェア画像を保存</button><button type="button" id="shc">文章をコピー</button></div>
       <p id="shmsg" class="shmsg" hidden></p>
     </div>
+  </div>
+
+  <h2 id="videos"><span class="ico" aria-hidden="true">🎬</span>動画でくわしく解説</h2>
+  <div class="vids">
+    <a class="vid" href="https://www.youtube.com/@hamnoshisan/videos" target="_blank" rel="noopener"><span class="vth"><img src="img/l03_640.jpg" alt="ふるさと納税 徹底解説" loading="lazy"><b>▶</b></span><span class="vtx"><strong>ふるさと納税 徹底解説</strong><small>しくみ・限度額・ワンストップ特例まで、損しない基本をぜんぶ</small></span></a>
+    <a class="vid" href="https://www.youtube.com/@hamnoshisan/videos" target="_blank" rel="noopener"><span class="vth"><img src="img/l04_640.jpg" alt="限度額シミュレーターの使い方" loading="lazy"><b>▶</b></span><span class="vtx"><strong>限度額シミュレーターの使い方</strong><small>このページの使い方を、実際の画面で実演</small></span></a>
   </div>
 
   <h2 id="guide"><span class="ico" aria-hidden="true">📘</span>はじめての人へ：ふるさと納税のしくみ</h2>
@@ -828,6 +846,7 @@ window.FQ=(function(){const K='hamuta_furusato_qty';let mem={};
     const b=e.target.closest('.suse');if(b){T('use_set',{set_name:b.dataset.title||(b.closest('.spanel')&&b.closest('.spanel').querySelector('h3').textContent)||''});return;}
     if(e.target.closest('#auto')){T('auto_combo');return;}
     const sh=e.target.closest('#shx,#shl,#shc,#shimg');if(sh){T('share',{method:{shx:'x',shl:'line',shc:'copy',shimg:'image'}[sh.id]});return;}
+    const vd=e.target.closest('.vid,.qvid');if(vd){T('video_click',{target:vd.getAttribute('href')});return;}
     const so=e.target.closest('.ch a');if(so){T('social_click',{target:so.classList.contains('ig')?'instagram':'youtube'});return;}
     if(e.target.closest('.fav')){T('favorite');return;}
     const t=e.target.closest('.topnav a');if(t){T('nav_click',{target:t.getAttribute('href')});}
